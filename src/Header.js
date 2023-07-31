@@ -1,14 +1,25 @@
 import React from 'react'
 import { styled } from 'styled-components'
 import Image1 from "./img/yeur.PNG"
-import Image2 from "./img/bloom.PNG"
+
 import Image3 from "./img/boutme.jpg"
 import Image4 from "./img/gadgetgo.png"
 import Image5 from "./img/luigi.PNG"
 import Image6 from "./img/twitter.PNG"
+import Image7 from "./img/bloom1.PNG"
+import Image8 from "./img/bloom2.PNG"
+import Image9 from "./img/board.PNG"
+import Image10 from "./img/board2.PNG"
+import Image11 from "./img/board4.PNG"
+import Image12 from "./img/climb1.PNG"
+import Image13 from "./img/climb5.PNG"
+import Image14 from "./img/climb6.PNG"
+import Image15 from "./img/anime.PNG"
+
+
 import { useState, useEffect } from 'react'
 const Header = () => {
-  const imgs = [Image1, Image2, Image3, Image4, Image5, Image6]
+  const imgs = [Image1, Image3, Image4, Image5, Image6, Image7, Image8, Image9, Image10, Image11, Image12, Image13,Image14,Image15]
 
   const [bubble1Src, setBubble1Src] = useState(imgs[Math.floor(Math.random() * imgs.length)]);  
   const [bubble2Src, setBubble2Src] = useState(imgs[Math.floor(Math.random() * imgs.length)]);
@@ -22,13 +33,13 @@ const Header = () => {
       setBubble1Src(imgs[Math.floor(Math.random() * imgs.length)]);
       setTimeout(() => {
         setBubble2Src(imgs[Math.floor(Math.random() * imgs.length)]);
-      }, 1000);
+      }, 700);
       setTimeout(() => {
         setBubble3Src(imgs[Math.floor(Math.random() * imgs.length)]);
-      }, 2000);
+      }, 1400);
       setTimeout(() => {
         setBubble4Src(imgs[Math.floor(Math.random() * imgs.length)]);
-      }, 2500);
+      }, 2200);
     };
 
     const interval = setInterval(updateBubbles, 2500); // Update every second
@@ -39,20 +50,7 @@ const Header = () => {
   }, []);
 
   const [scrollAmount, setScrollAmount] = useState(0);
-  // console.log(scrollAmount);
-
-   // Function to debounce scroll updates
-  //  const debounce = (callback, delay) => {
-  //   let timerId;
-  //   return (...args) => {
-  //     clearTimeout(timerId);
-  //     timerId = setTimeout(() => {
-  //       callback(...args);
-  //     }, delay);
-  //   };
-  // };
-  // This useEffect hook will be called once when the component mounts
-  // and then every time the scroll position changes.
+  
   useEffect(() => {
     // Function to update the scroll amount state whenever the user scrolls.
     const handleScroll = () => {
@@ -154,7 +152,6 @@ position: absolute;
 left: 12vw;
 background-color: #ECECEC;
 transform: ${({ scrollAmount }) => (scrollAmount? `translateY(${scrollAmount}%)` : `translateY(0%)`)};
-
 `
 const Bubble2 = styled.img`
 width: 15vw;
