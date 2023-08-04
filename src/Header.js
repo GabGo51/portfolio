@@ -2,7 +2,7 @@ import React from 'react'
 import { styled } from 'styled-components'
 import Image1 from "./img/yeur.PNG"
 
-import Image3 from "./img/boutme.jpg"
+import Image3 from "./img/bout.jpg"
 import Image4 from "./img/gadgetgo.png"
 import Image5 from "./img/luigi.PNG"
 import Image6 from "./img/twitter.PNG"
@@ -74,8 +74,8 @@ const Header = () => {
       <Container scrollAmount = {scrollAmount}>
         <Name scrollAmount = {scrollAmount/10}>GABRIEL</Name>
         <LastName scrollAmount = {scrollAmount/10}>GOSSELIN</LastName>
-        <Digital scrollAmount = {scrollAmount/10}>DIGITAL</Digital>
-        <Portfoio scrollAmount = {scrollAmount/10}>PORTFOLIO</Portfoio>
+        <Digital scrollAmount = {scrollAmount/10}>WEB</Digital>
+        <Portfoio scrollAmount = {scrollAmount/10}>DEVELOPER</Portfoio>
         <i scrollAmount = {scrollAmount} className="fa-solid fa-arrow-turn-down"></i>
       </Container>
       <Bubble scrollAmount = {scrollAmount*1.8} src={bubble1Src}></Bubble>
@@ -90,8 +90,11 @@ const Box = styled.div`
 background-color: black;
 color: white;
 padding-top: 50px;
-padding-bottom: 1500px;
+padding-bottom: 1700px;
 width: 100vw;
+@media screen and (max-width: 600px) {
+  padding-bottom: 650px;
+}
 p{
   font-size: 10vw;
   mix-blend-mode: difference;

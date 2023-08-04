@@ -1,12 +1,15 @@
 import React from 'react'
 import { styled } from 'styled-components'
+import TechStack from './TechStack'
+import Pod from './Pod'
 const About = () => {
   return (
     <>
     <Round></Round>
     <Box>
-      
-      <>yo</>
+      <Pod></Pod>
+      <Hello>hello</Hello>
+      <TechStack/>
     </Box>
     
     </>
@@ -17,14 +20,16 @@ const About = () => {
 const Box = styled.div`
 background-color:#F0F0F0;
 width: 100vw;
-
-
 display: flex;
 flex-direction: column;
 align-items: center;
 margin-top: -50px;
 height: 600px;
 z-index: 2;
+`
+
+const Hello = styled.p`
+font-family: Cherry Bomb One;
 `
 const Round = styled.div`
 width: 100vw;
