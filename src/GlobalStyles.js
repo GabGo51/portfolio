@@ -17,6 +17,7 @@ export default createGlobalStyle`
 
   html, body {
     max-width: 100vw;
+    background-color:#F0F0F0;
   }
 
   html, body, div, span, applet, object, iframe,

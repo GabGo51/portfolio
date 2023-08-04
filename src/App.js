@@ -2,14 +2,14 @@ import styled from "styled-components"
 import Header from "./Header";
 import About from "./About";
 import Me from "./Me";
-
+import Projects from "./Projects";
 function App() {
   return (
   <Box>
-   <Header/>
-   
-   <About/>
-   <Me/>
+    <Header/>
+    <About/>
+    <Me/>
+    <Projects/>
   </Box>
   );
 }

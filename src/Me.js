@@ -4,7 +4,8 @@ import Marquee from "react-fast-marquee";
 import Moi from "./img/boutme.jpg"
 const Me = () => {
   return (
-    <Container>
+  <>
+  <Container>
       <Box>
         <CustomMarquee speed={70}>
           <p>ABOUT</p>
@@ -23,17 +24,22 @@ const Me = () => {
       </Box>
       <img src={Moi}/>
       <Text>I'm a dev with a passion for Web Design, snowboard, rock climbing and gaming/anime. When I'm not geeking online, you'll find me outside either climbing up the mountains or snowboarding down them. As a web developer, I'm fascinated by the intersection of technology and creativity. I've honed my skills in HTML, CSS, JavaScript, and React to build visually stunning and responsive websites. I strive to create seamless user experiences that captivate and engage visitors.</Text>
+      <Round></Round>
     </Container>
+    
+  </>
+    
   )
 }
 
 const Container = styled.div`
 background-color:#F0F0F0;
 width: 100vw;
-z-index: 30;
+z-index: 40;
 padding-top: 100px;
-padding-bottom: 300px;
+padding-bottom: 150px;
 position: relative;
+
 p{
   font-size: 10vw;
   margin-right: 30px;
@@ -102,6 +108,16 @@ transform: translate3d(180%, -350%, 0);
   font-size: 1.8vw;
   width: 64vw;
   }
+`
+const Round = styled.div`
+width: 100vw;
+height: 100px;
+background-color:#F0F0F0;
+border-radius: 100%;
+z-index: 2;
+margin-bottom: -200px;
+z-index: 40;
+
 `
 
 
