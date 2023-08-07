@@ -45,7 +45,7 @@ width: 100vw;
 color: white;
 padding-bottom: 400px;
 padding-top: 200px;
-z-index: 40;
+z-index: 30;
 display: flex;
 flex-direction: column;
 align-items: center;

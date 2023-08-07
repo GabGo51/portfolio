@@ -7,7 +7,7 @@ const TechStack = () =>{
   return(
   <Container>
     <Box>
-      <Title>STACK</Title>
+      <Title> MY STACK</Title>
       {/* <i class="fa-solid fa-code "></i> */}
     </Box>
     
@@ -53,8 +53,9 @@ margin-bottom: 30px;
 `
 
 const Title = styled.p`
-font-size: 7vw;
-
+font-size: 3vw;
+font-family: Canter;
+font-style: italic;
 font-weight: 500;
 margin-top: -7px;
 

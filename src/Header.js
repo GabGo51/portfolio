@@ -79,9 +79,9 @@ const Header = () => {
         <i scrollAmount = {scrollAmount} className="fa-solid fa-arrow-turn-down"></i>
       </Container>
       <Bubble scrollAmount = {scrollAmount*1.8} src={bubble1Src}></Bubble>
-      <Bubble2 scrollAmount = {130 + scrollAmount*1.8}  src={bubble2Src}></Bubble2>
-      <Bubble3 scrollAmount = {240 + scrollAmount*1.8}   src={bubble3Src}></Bubble3>
-      <Bubble4 scrollAmount = {360 + scrollAmount*1.8} src={bubble4Src} ></Bubble4>
+      <Bubble2 scrollAmount = {126.5 + scrollAmount*1.8}  src={bubble2Src}></Bubble2>
+      <Bubble3 scrollAmount = {258 + scrollAmount*1.8}   src={bubble3Src}></Bubble3>
+      <Bubble4 scrollAmount = {386 + scrollAmount*1.8} src={bubble4Src} ></Bubble4>
     </Box>
   )
 }
@@ -96,7 +96,7 @@ width: 100vw;
   padding-bottom: 650px;
 }
 p{
-  font-size: 10vw;
+
   mix-blend-mode: difference;
 }
 img{
@@ -121,7 +121,9 @@ const Name = styled.p`
 margin-left: 30vw;
 font-weight: 100;
 font-family: Canter;
+font-size: 12.8vw;
 font-style: italic;
+margin-bottom: 0.8vw;
 transform: ${({ scrollAmount }) => (scrollAmount? `translateX(${scrollAmount}%)` : `translateX(0%)`)};
 
 
@@ -130,6 +132,7 @@ const LastName = styled.p`
 margin-left: 10vw;
 font-weight: 300;
 font-family: Canter;
+font-size: 12.8vw;
 font-style: italic;
 transform: ${({ scrollAmount }) => (scrollAmount? `translateX(-${scrollAmount}%)` : `translateX(0%)`)};
 
@@ -137,12 +140,15 @@ transform: ${({ scrollAmount }) => (scrollAmount? `translateX(-${scrollAmount}%)
 const Digital = styled.p`
 margin-left: 40vw;
 font-weight: 300;
+font-size: 11.6vw;
+margin-bottom: 0.8vw;
 transform: ${({ scrollAmount }) => (scrollAmount? `translateX(${scrollAmount}%)` : `translateX(0%)`)};
 
 `
 const Portfoio = styled.p`
-margin-left: 20vw;
+margin-left: 12vw;
 font-weight: 300;
+font-size: 11.6vw;
 transform: ${({ scrollAmount }) => (scrollAmount? `translateX(-${scrollAmount}%)` : `translateX(0%)`)};
 
 `
@@ -161,10 +167,9 @@ width: 15vw;
 height: 8vw;
 background-color: white;
 position: absolute;
-left: 60vw;
-transform: translateY(100%);
+right: 18vw;
 background-color: #ECECEC;
-transform: ${({ scrollAmount }) => (scrollAmount? `translateY(${scrollAmount}%)` : `translateY(100%)`)};
+transform: ${({ scrollAmount }) => (scrollAmount? `translateY(${scrollAmount}%)` : `translateY(126.5%)`)};
 /* transform:translateY(130%); */
 `
 const Bubble3 = styled.img`
@@ -172,8 +177,8 @@ width: 15vw;
 height: 8vw;
 background-color: white;
 position: absolute;
-left: 22vw;
-transform: ${({ scrollAmount }) => (scrollAmount? `translateY(${scrollAmount}%)` : `translateY(240%)`)};
+left: 22.5vw;
+transform: ${({ scrollAmount }) => (scrollAmount? `translateY(${scrollAmount}%)` : `translateY(258%)`)};
 /* transform:translateY(240%); */
 background-color: #ECECEC;
 
@@ -184,7 +189,7 @@ height: 8vw;
 background-color: white;
 position: absolute;
 right: 10vw;
-transform: ${({ scrollAmount }) => (scrollAmount? `translateY(${scrollAmount}%)` : `translateY(360%)`)};
+transform: ${({ scrollAmount }) => (scrollAmount? `translateY(${scrollAmount}%)` : `translateY(386%)`)};
 /* transform:translateY(360%); */
 background-color: #ECECEC;
 mix-blend-mode: difference;

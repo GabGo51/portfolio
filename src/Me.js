@@ -113,8 +113,8 @@ const Round = styled.div`
 width: 100vw;
 height: 100px;
 background-color:#F0F0F0;
-border-radius: 100%;
-z-index: 2;
+border-radius: 70%;
+z-index: 20;
 margin-bottom: -200px;
 z-index: 40;
 
