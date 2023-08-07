@@ -99,7 +99,7 @@ left: 20px;
 width: 28vw;
 font-weight: 400;
 font-size: 1.2vw;
-transform: translate3d(180%, -350%, 0);
+transform: translate3d(180%, -320%, 0);
 
 @media screen and (max-width: 1200px) {
   transform: translate3d(11.5vw, -130%, 0);

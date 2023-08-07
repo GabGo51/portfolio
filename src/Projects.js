@@ -8,7 +8,7 @@ const Projects = () => {
   return (
     <Container>
       <Title>
-        <p>PROJECTS &</p>
+        <Proj>PROJECTS &</Proj>
         <p>FEATURED WORKS</p>
       </Title>
       <Project1>
@@ -56,6 +56,11 @@ const Title = styled.div`
 font-size: 8vw;
 line-height: 6.5vw;
 margin-bottom: 8vw;
+`
+const Proj = styled.p`
+font-family: Canter;
+font-style: italic;
+font-size: 9.1vw;
 `
 
 const Project1 = styled.div`

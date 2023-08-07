@@ -57,7 +57,7 @@ font-size: 7vw;
 
 font-weight: 500;
 margin-top: -7px;
-font-family: Poppins;
+
 
 @media screen and (max-width: 600px) {
   

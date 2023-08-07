@@ -1,10 +1,16 @@
 import { createGlobalStyle } from "styled-components";
-import Serif from "./Fonts/yo.ttf"
+import Serif from "./Fonts/aga.otf"
+import Normal from"./Fonts/oy.otf"
 export default createGlobalStyle`
 
   @font-face {
     font-family: Canter;
     src: url(${Serif});
+  }
+
+  @font-face {
+    font-family: PasCanter;
+    src: url(${Normal});
   }
 
   *,

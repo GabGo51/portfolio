@@ -162,9 +162,9 @@ height: 8vw;
 background-color: white;
 position: absolute;
 left: 60vw;
-transform: translateY(130%);
+transform: translateY(100%);
 background-color: #ECECEC;
-transform: ${({ scrollAmount }) => (scrollAmount? `translateY(${scrollAmount}%)` : `translateY(130%)`)};
+transform: ${({ scrollAmount }) => (scrollAmount? `translateY(${scrollAmount}%)` : `translateY(100%)`)};
 /* transform:translateY(130%); */
 `
 const Bubble3 = styled.img`
