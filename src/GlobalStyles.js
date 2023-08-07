@@ -1,6 +1,12 @@
 import { createGlobalStyle } from "styled-components";
-
+import Serif from "./Fonts/yo.ttf"
 export default createGlobalStyle`
+
+  @font-face {
+    font-family: Canter;
+    src: url(${Serif});
+  }
+
   *,
   *:before,
   *:after {

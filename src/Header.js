@@ -119,8 +119,8 @@ i{
 `
 const Name = styled.p`
 margin-left: 30vw;
-font-weight: 300;
-font-family: Raleway;
+font-weight: 100;
+font-family: Canter;
 font-style: italic;
 transform: ${({ scrollAmount }) => (scrollAmount? `translateX(${scrollAmount}%)` : `translateX(0%)`)};
 
@@ -129,7 +129,7 @@ transform: ${({ scrollAmount }) => (scrollAmount? `translateX(${scrollAmount}%)`
 const LastName = styled.p`
 margin-left: 10vw;
 font-weight: 300;
-font-family: Raleway;
+font-family: Canter;
 font-style: italic;
 transform: ${({ scrollAmount }) => (scrollAmount? `translateX(-${scrollAmount}%)` : `translateX(0%)`)};
 

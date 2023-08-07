@@ -58,6 +58,10 @@ font-size: 7vw;
 font-weight: 500;
 margin-top: -7px;
 font-family: Poppins;
+
+@media screen and (max-width: 600px) {
+  
+  }
 `
 
 const IconContainer = styled.div`
@@ -71,6 +75,30 @@ justify-content: center;
 i{
   margin: 40px;
 }
+
+.fa-react{
+  color: #00BEFF ;
+}
+
+.fa-html5{
+  color: #EB4444;
+}
+
+
+
+.fa-css3{
+  color: #448DEB;
+}
+
+.fa-git-alt{
+  color: #B70000;
+}
+
+
+.fa-envira{
+  color: #189322 ;
+}
+
 
 `
 
