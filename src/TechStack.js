@@ -16,8 +16,6 @@ const TechStack = () =>{
       <i class="fa-brands fa-js" ></i>
       <i class="fa-brands fa-html5" ></i>
       <i class="fa-brands fa-css3" ></i>
-      
-      
       <i class="fa-brands fa-git-alt" ></i>
       <i class="fa-brands fa-node-js"></i>
       <i class="fa-brands fa-envira"></i>
@@ -37,10 +35,7 @@ flex-direction: column;
 align-items: center;
 margin-top: 200px;
 
-i{
-  
-  scale: 3;
-}
+
 
 
 `
@@ -53,7 +48,7 @@ margin-bottom: 30px;
 `
 
 const Title = styled.p`
-font-size: 3vw;
+font-size: 6vw;
 font-family: Canter;
 font-style: italic;
 font-weight: 500;
@@ -68,13 +63,18 @@ margin-top: -7px;
 const IconContainer = styled.div`
 display: flex;
 flex-wrap: wrap;
-justify-content: space-between;
-align-items: center;
 justify-content: center;
+align-items: center;
 
+width: 100vw;
 
 i{
+  margin: 60px;
+  scale: 6;
+  @media screen and (max-width: 600px) {
+  scale: 3;
   margin: 40px;
+  }
 }
 
 .fa-react{

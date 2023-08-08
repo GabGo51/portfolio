@@ -15,11 +15,14 @@ import Image12 from "./img/climb1.PNG"
 import Image13 from "./img/climb5.PNG"
 import Image14 from "./img/climb6.PNG"
 import Image15 from "./img/anime.PNG"
-
+import Image16 from "./img/climbb.PNG"
+import Image17 from "./img/climbbb.PNG"
+import Image18 from "./img/dimple.PNG"
+import Image19 from "./img/sanji.PNG"
 
 import { useState, useEffect } from 'react'
 const Header = () => {
-  const imgs = [Image1, Image3, Image4, Image5, Image6, Image7, Image8, Image9, Image10, Image11, Image12, Image13,Image14,Image15]
+  const imgs = [Image1, Image3, Image4, Image5, Image6, Image7, Image8, Image9, Image10, Image11, Image12, Image13,Image14,Image15, Image16, Image17, Image18, Image19] 
 
   const [bubble1Src, setBubble1Src] = useState(imgs[Math.floor(Math.random() * imgs.length)]);  
   const [bubble2Src, setBubble2Src] = useState(imgs[Math.floor(Math.random() * imgs.length)]);
@@ -125,7 +128,8 @@ font-size: 12.8vw;
 font-style: italic;
 margin-bottom: 0.8vw;
 transform: ${({ scrollAmount }) => (scrollAmount? `translateX(${scrollAmount}%)` : `translateX(0%)`)};
-
+color: white;
+mix-blend-mode: difference;
 
 `
 const LastName = styled.p`
