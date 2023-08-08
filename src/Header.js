@@ -98,10 +98,6 @@ width: 100vw;
 @media screen and (max-width: 600px) {
   padding-bottom: 650px;
 }
-p{
-
-  mix-blend-mode: difference;
-}
 img{
   object-fit: cover;
   background-position: top;
@@ -111,6 +107,8 @@ line-height: 9.5vw;
 
 const Container = styled.div`
 position: fixed;
+color: white;
+mix-blend-mode: difference;
 z-index: 2;
 i{
   position: absolute;
@@ -122,7 +120,6 @@ i{
 `
 const Name = styled.p`
 margin-left: 30vw;
-font-weight: 100;
 font-family: Canter;
 font-size: 12.8vw;
 font-style: italic;
@@ -130,11 +127,11 @@ margin-bottom: 0.8vw;
 transform: ${({ scrollAmount }) => (scrollAmount? `translateX(${scrollAmount}%)` : `translateX(0%)`)};
 color: white;
 mix-blend-mode: difference;
+z-index:20;
 
 `
 const LastName = styled.p`
 margin-left: 10vw;
-font-weight: 300;
 font-family: Canter;
 font-size: 12.8vw;
 font-style: italic;
