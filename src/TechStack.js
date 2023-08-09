@@ -1,13 +1,32 @@
 import  styled  from "styled-components"
-
+import { useState, useEffect } from "react";
 
 const TechStack = () =>{
+  const [showTitle, setShowTitle] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      
+      const scrollPosition = window.scrollY;
+      
+      const triggerPosition = 1100; // Adjust this value to set the scroll amount for the title to appear
+
+      if(scrollPosition >= triggerPosition){
+        setShowTitle(true)
+      };
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
 
   return(
-  <Container>
+  <Container id = "techstack">
     <Box>
-      <Title> MY STACK</Title>
+      <Title className={showTitle ? 'show' : ''}> MY STACK</Title>
       {/* <i class="fa-solid fa-code "></i> */}
     </Box>
     
@@ -53,6 +72,14 @@ font-family: Canter;
 font-style: italic;
 font-weight: 500;
 margin-top: -7px;
+opacity: 0;
+transition: 0.4s;
+transform: translate3d(-15px, -15px, 100px) rotateX(70deg);
+&.show{
+  opacity: 1;
+  transform: translate3d(0, 0, 0) rotateX(0deg);
+  
+}
 
 
 @media screen and (max-width: 600px) {

@@ -3,31 +3,60 @@ import styled from "styled-components"
 import proj1 from "./img/proj1.png"
 import proj2 from "./img/proj2.PNG"
 import proj3 from "./img/proj3.PNG"
+import { useState, useEffect } from 'react'
 
 const Projects = () => {
+  const [showTitle, setShowTitle] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      
+      const scrollPosition = window.scrollY;
+      console.log(scrollPosition);
+      const triggerPosition = 3300; // Adjust this value to set the scroll amount for the title to appear
+
+      if(scrollPosition >= triggerPosition){
+        setShowTitle(true)
+      };
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <Container>
       <Title>
-        <Proj>PROJECTS &</Proj>
-        <p>FEATURED WORKS</p>
+        <Proj className={showTitle ? 'show' : ''}>PROJECTS &</Proj>
+        <Feat className={showTitle ? 'show' : ''}>FEATURED WORKS</Feat>
       </Title>
       <Project1>
+        <a target='#' href=''>
         <Bloom>BLOOM</Bloom>
-        <Proj1 src={proj1}/>
+        
+          <Proj1 src={proj1}/>
+        </a>
       </Project1>
       <Project1>
+        <a target='#' href='https://meow-twitter.vercel.app/'>
         <Box>
           <GadgetGo>MEOW</GadgetGo>
         </Box>
         
-        <Proj2 src={proj2}/>
+          <Proj2 src={proj2}/>
+        </a>
+        
       </Project1>
       <Project1>
+        <a target='#' href='https://gadgetgo.vercel.app/'>
         <Box>
           <Social>GADGETGO</Social>
         </Box>
         
-        <Proj2 src={proj3}/>
+          <Proj2 src={proj3}/>
+        </a>
+        
       </Project1>
 
       
@@ -56,11 +85,28 @@ const Title = styled.div`
 font-size: 8vw;
 line-height: 6.5vw;
 margin-bottom: 8vw;
+
 `
 const Proj = styled.p`
 font-family: Canter;
 font-style: italic;
 font-size: 9.1vw;
+opacity: 0;
+transition: 0.4s;
+transform: translate3d(-15px, -15px, 100px) rotateX(70deg);
+&.show{
+  opacity: 1;
+  transform: translate3d(0, 0, 0) rotateX(0deg);
+}
+`
+const Feat = styled.p`
+opacity: 0;
+transition: 0.4s;
+transform: translate3d(-15px, -15px, 100px) rotateX(70deg);
+&.show{
+  opacity: 1;
+  transform: translate3d(0, 0, 0) rotateX(0deg);
+}
 `
 
 const Project1 = styled.div`
@@ -78,6 +124,7 @@ width: 100vw;
 
 const Bloom = styled.p`
 position: absolute;
+color: white;
 right: 5vw;
 font-size: 5.2vw;
 border-bottom:0.5vw solid white ;
