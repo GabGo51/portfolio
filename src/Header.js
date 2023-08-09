@@ -62,7 +62,7 @@ const Header = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowTitle(true);
-    }, 500);
+    }, 250);
 
     return () => clearTimeout(timer);
   }, []);
@@ -208,8 +208,8 @@ const Name = styled.p`
   mix-blend-mode: difference;
   z-index: 20;
   opacity: 0;
-  transition: ${({ showDelay }) => (showDelay ? `0.1s` : `0.6s`)};
-  transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
+  transition: ${({ showDelay }) => (showDelay ? `0.1s` : `1.2s`)};
+  transform: translate3d(-15px, -15px, 0) rotate3d(1, 0.05, 0.03, 90deg);
   &.show {
     opacity: 1;
     transform: ${({ scrollAmount }) =>
@@ -225,8 +225,8 @@ const LastName = styled.p`
   font-style: italic;
   
   opacity: 0;
-  transition: ${({ showDelay }) => (showDelay ? `0.1s` : `0.6s`)};
-  transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
+  transition: ${({ showDelay }) => (showDelay ? `0.1s` : `1.2s`)};
+  transform: translate3d(-15px, -15px, 0) rotate3d(1, -0.05, 0.03, 90deg);
   &.show {
     opacity: 1;
     transform: ${({ scrollAmount }) =>
@@ -241,8 +241,8 @@ const Digital = styled.p`
   font-size: 11.6vw;
   margin-bottom: 0.8vw;
   opacity: 0;
-  transition: ${({ showDelay }) => (showDelay ? `0.1s` : `0.6s`)};
-  transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
+  transition: ${({ showDelay }) => (showDelay ? `0.1s` : `1.2s`)};
+  transform: translate3d(-15px, -15px, 0) rotate3d(1, 0.05, 0.03, 90deg);
   &.show {
     opacity: 1;
     transform: ${({ scrollAmount }) =>
@@ -256,8 +256,9 @@ const Portfoio = styled.p`
   font-weight: 300;
   font-size: 11.6vw;
   opacity: 0;
-  transition: ${({ showDelay }) => (showDelay ? `0.1s` : `0.6s`)};
-  transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
+  transition: ${({ showDelay }) => (showDelay ? `0.1s` : `1.2s`)};
+  transform: translate3d(-15px, -15px, 0) rotate3d(1, -0.05, 0.03, 90deg);
+  
   &.show {
     opacity: 1;
     transform: ${({ scrollAmount }) =>
