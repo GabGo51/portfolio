@@ -13,7 +13,7 @@ const Projects = () => {
       
       const scrollPosition = window.scrollY;
       console.log(scrollPosition);
-      const triggerPosition = 3300; // Adjust this value to set the scroll amount for the title to appear
+      const triggerPosition = 3600; // Adjust this value to set the scroll amount for the title to appear
 
       if(scrollPosition >= triggerPosition){
         setShowTitle(true)

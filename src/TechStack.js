@@ -9,7 +9,7 @@ const TechStack = () =>{
       
       const scrollPosition = window.scrollY;
       
-      const triggerPosition = 1100; // Adjust this value to set the scroll amount for the title to appear
+      const triggerPosition = 1200; // Adjust this value to set the scroll amount for the title to appear
 
       if(scrollPosition >= triggerPosition){
         setShowTitle(true)
