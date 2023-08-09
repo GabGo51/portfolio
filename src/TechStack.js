@@ -74,7 +74,7 @@ font-weight: 500;
 margin-top: -7px;
 opacity: 0;
 transition: 0.4s;
-transform: translate3d(-15px, -15px, 100px) rotateX(70deg);
+transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
 &.show{
   opacity: 1;
   transform: translate3d(0, 0, 0) rotateX(0deg);

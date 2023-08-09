@@ -209,7 +209,7 @@ const Name = styled.p`
   z-index: 20;
   opacity: 0;
   transition: ${({ showDelay }) => (showDelay ? `0.1s` : `0.6s`)};
-  transform: translate3d(-15px, -15px, 100px) rotateX(70deg);
+  transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
   &.show {
     opacity: 1;
     transform: ${({ scrollAmount }) =>
@@ -226,7 +226,7 @@ const LastName = styled.p`
   
   opacity: 0;
   transition: ${({ showDelay }) => (showDelay ? `0.1s` : `0.6s`)};
-  transform: translate3d(-15px, -15px, 100px) rotateX(70deg);
+  transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
   &.show {
     opacity: 1;
     transform: ${({ scrollAmount }) =>
@@ -242,7 +242,7 @@ const Digital = styled.p`
   margin-bottom: 0.8vw;
   opacity: 0;
   transition: ${({ showDelay }) => (showDelay ? `0.1s` : `0.6s`)};
-  transform: translate3d(-15px, -15px, 100px) rotateX(70deg);
+  transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
   &.show {
     opacity: 1;
     transform: ${({ scrollAmount }) =>
@@ -257,7 +257,7 @@ const Portfoio = styled.p`
   font-size: 11.6vw;
   opacity: 0;
   transition: ${({ showDelay }) => (showDelay ? `0.1s` : `0.6s`)};
-  transform: translate3d(-15px, -15px, 100px) rotateX(70deg);
+  transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
   &.show {
     opacity: 1;
     transform: ${({ scrollAmount }) =>
