@@ -29,7 +29,19 @@ const Header = () => {
   const [bubble3Src, setBubble3Src] = useState(imgs[Math.floor(Math.random() * imgs.length)]);
   const [bubble4Src, setBubble4Src] = useState(imgs[Math.floor(Math.random() * imgs.length)]);
 
-  // ... your other code ...
+  const [showTitle, setShowTitle] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowTitle(true);
+    }, 500);
+
+    
+    return () => clearTimeout(timer);
+  }, []); 
+
+
+
 
   useEffect(() => {
     const updateBubbles = () => {
@@ -75,10 +87,10 @@ const Header = () => {
   return (
     <Box scrollAmount = {scrollAmount}>
       <Container scrollAmount = {scrollAmount}>
-        <Name scrollAmount = {scrollAmount/10}>GABRIEL</Name>
-        <LastName scrollAmount = {scrollAmount/10}>GOSSELIN</LastName>
-        <Digital scrollAmount = {scrollAmount/10}>WEB</Digital>
-        <Portfoio scrollAmount = {scrollAmount/10}>DEVELOPER</Portfoio>
+        <Name className={showTitle ? 'show' : ''} scrollAmount = {scrollAmount/10}>GABRIEL</Name>
+        <LastName className={showTitle ? 'show' : ''} scrollAmount = {scrollAmount/10}>GOSSELIN</LastName>
+        <Digital className={showTitle ? 'show' : ''} scrollAmount = {scrollAmount/10}>WEB</Digital>
+        <Portfoio className={showTitle ? 'show' : ''} scrollAmount = {scrollAmount/10}>DEVELOPER</Portfoio>
         <i scrollAmount = {scrollAmount} className="fa-solid fa-arrow-turn-down"></i>
       </Container>
       <Bubble scrollAmount = {scrollAmount*1.8} src={bubble1Src}></Bubble>
@@ -124,11 +136,16 @@ font-family: Canter;
 font-size: 12.8vw;
 font-style: italic;
 margin-bottom: 0.8vw;
-transform: ${({ scrollAmount }) => (scrollAmount? `translateX(${scrollAmount}%)` : `translateX(0%)`)};
 color: white;
 mix-blend-mode: difference;
 z-index:20;
-
+opacity: 0;
+transition: 0.6s;
+transform: translate3d(-15px, -15px, 100px) rotateX(70deg);
+&.show{
+  opacity: 1;
+  transform: ${({ scrollAmount }) => (scrollAmount? `translateX(${scrollAmount}%) translate3d(0, 0, 0) rotateX(0deg)` : `translateX(0%)`)};
+}
 `
 const LastName = styled.p`
 margin-left: 10vw;
@@ -136,7 +153,13 @@ font-family: Canter;
 font-size: 12.8vw;
 font-style: italic;
 transform: ${({ scrollAmount }) => (scrollAmount? `translateX(-${scrollAmount}%)` : `translateX(0%)`)};
-
+opacity: 0;
+transition: 0.6s;
+transform: translate3d(-15px, -15px, 100px) rotateX(70deg);
+&.show{
+  opacity: 1;
+  transform: ${({ scrollAmount }) => (scrollAmount? `translateX(-${scrollAmount}%) translate3d(0, 0, 0) rotateX(0deg)` : `translateX(0%)`)};
+}
 `
 const Digital = styled.p`
 margin-left: 40vw;
@@ -144,14 +167,26 @@ font-weight: 300;
 font-size: 11.6vw;
 margin-bottom: 0.8vw;
 transform: ${({ scrollAmount }) => (scrollAmount? `translateX(${scrollAmount}%)` : `translateX(0%)`)};
-
+opacity: 0;
+transition: 0.6s;
+transform: translate3d(-15px, -15px, 100px) rotateX(70deg);
+&.show{
+  opacity: 1;
+  transform: ${({ scrollAmount }) => (scrollAmount? `translateX(${scrollAmount}%) translate3d(0, 0, 0) rotateX(0deg)` : `translateX(0%)`)};
+}
 `
 const Portfoio = styled.p`
 margin-left: 12vw;
 font-weight: 300;
 font-size: 11.6vw;
 transform: ${({ scrollAmount }) => (scrollAmount? `translateX(-${scrollAmount}%)` : `translateX(0%)`)};
-
+opacity: 0;
+transition: 0.6s;
+transform: translate3d(-15px, -15px, 100px) rotateX(70deg);
+&.show{
+  opacity: 1;
+  transform: ${({ scrollAmount }) => (scrollAmount? `translateX(-${scrollAmount}%) translate3d(0, 0, 0) rotateX(0deg)` : `translateX(0%)`)};
+}
 `
 
 const Bubble = styled.img`
