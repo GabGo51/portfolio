@@ -226,7 +226,7 @@ const LastName = styled.p`
   
   opacity: 0;
   transition: ${({ showDelay }) => (showDelay ? `0.1s` : `1.2s`)};
-  transform: translate3d(-15px, -15px, 0) rotate3d(1, -0.05, 0.03, 90deg);
+  transform: translate3d(-15px, -15px, 0) rotate3d(1, -0.05, -0.03, 90deg);
   &.show {
     opacity: 1;
     transform: ${({ scrollAmount }) =>
@@ -257,7 +257,7 @@ const Portfoio = styled.p`
   font-size: 11.6vw;
   opacity: 0;
   transition: ${({ showDelay }) => (showDelay ? `0.1s` : `1.2s`)};
-  transform: translate3d(-15px, -15px, 0) rotate3d(1, -0.05, 0.03, 90deg);
+  transform: translate3d(-15px, -15px, 0) rotate3d(1, -0.05, -0.03, 90deg);
   
   &.show {
     opacity: 1;
