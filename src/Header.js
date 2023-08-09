@@ -144,6 +144,7 @@ transition: 0.6s;
 transform: translate3d(-15px, -15px, 100px) rotateX(70deg);
 &.show{
   opacity: 1;
+  transition: 0.2s;
   transform: ${({ scrollAmount }) => (scrollAmount? `translateX(${scrollAmount}%) translate3d(0, 0, 0) rotateX(0deg)` : `translateX(0%)`)};
 }
 `
@@ -158,6 +159,7 @@ transition: 0.6s;
 transform: translate3d(-15px, -15px, 100px) rotateX(70deg);
 &.show{
   opacity: 1;
+  transition: 0.2s;
   transform: ${({ scrollAmount }) => (scrollAmount? `translateX(-${scrollAmount}%) translate3d(0, 0, 0) rotateX(0deg)` : `translateX(0%)`)};
 }
 `
@@ -172,6 +174,7 @@ transition: 0.6s;
 transform: translate3d(-15px, -15px, 100px) rotateX(70deg);
 &.show{
   opacity: 1;
+  transition: 0.2s;
   transform: ${({ scrollAmount }) => (scrollAmount? `translateX(${scrollAmount}%) translate3d(0, 0, 0) rotateX(0deg)` : `translateX(0%)`)};
 }
 `
@@ -185,6 +188,7 @@ transition: 0.6s;
 transform: translate3d(-15px, -15px, 100px) rotateX(70deg);
 &.show{
   opacity: 1;
+  transition: 0.2s;
   transform: ${({ scrollAmount }) => (scrollAmount? `translateX(-${scrollAmount}%) translate3d(0, 0, 0) rotateX(0deg)` : `translateX(0%)`)};
 }
 `
