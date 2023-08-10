@@ -52,18 +52,15 @@ flex-wrap: wrap;
 justify-content: center;
 flex-direction: column;
 align-items: center;
-margin-top: 200px;
-
-
-
-
+margin-top: 15vw;
+margin-bottom: 10vw;
 `
 
 const Box  = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
-margin-bottom: 30px;
+margin-bottom: 10vw;
 `
 
 const Title = styled.p`
@@ -71,9 +68,8 @@ font-size: 6vw;
 font-family: Canter;
 font-style: italic;
 font-weight: 500;
-margin-top: -7px;
 opacity: 0;
-transition: 0.4s;
+transition: 1s;
 transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
 &.show{
   opacity: 1;
@@ -92,11 +88,10 @@ display: flex;
 flex-wrap: wrap;
 justify-content: center;
 align-items: center;
-
 width: 100vw;
 
 i{
-  margin: 60px;
+  margin: 50px 80px;
   scale: 6;
   @media screen and (max-width: 600px) {
   scale: 3;
@@ -104,28 +99,6 @@ i{
   }
 }
 
-.fa-react{
-  color: #00BEFF ;
-}
-
-.fa-html5{
-  color: #EB4444;
-}
-
-
-
-.fa-css3{
-  color: #448DEB;
-}
-
-.fa-git-alt{
-  color: #B70000;
-}
-
-
-.fa-envira{
-  color: #189322 ;
-}
 
 
 `

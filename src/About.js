@@ -22,7 +22,7 @@ const Box = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: -50px;
-  height: 600px;
+  
   z-index: 2;
 `;
 

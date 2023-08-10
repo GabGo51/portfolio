@@ -1,7 +1,8 @@
 import React from "react";
 import { styled } from "styled-components";
-import Image1 from "./img/yeur.PNG";
 
+//shitty way of importing xd
+import Image1 from "./img/yeur.PNG";
 import Image3 from "./img/bout.jpg";
 import Image4 from "./img/gadgetgo.png";
 import Image5 from "./img/luigi.PNG";
@@ -21,7 +22,9 @@ import Image18 from "./img/dimple.PNG";
 import Image19 from "./img/sanji.PNG";
 
 import { useState, useEffect } from "react";
+//This compo has the main text and img 
 const Header = () => {
+  //array of img to pick them randomly 
   const imgs = [
     Image1,
     Image3,
@@ -42,7 +45,7 @@ const Header = () => {
     Image18,
     Image19,
   ];
-
+  //radom picking
   const [bubble1Src, setBubble1Src] = useState(
     imgs[Math.floor(Math.random() * imgs.length)]
   );
@@ -56,6 +59,7 @@ const Header = () => {
     imgs[Math.floor(Math.random() * imgs.length)]
   );
 
+  //state and timer for text animations probably a better way to go abt this
   const [showTitle, setShowTitle] = useState(false);
   const [showDelay, setShowDelay] = useState(false);
 
@@ -75,6 +79,7 @@ const Header = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  //making the image change eache x amt of ml second
   useEffect(() => {
     const updateBubbles = () => {
       setBubble1Src(imgs[Math.floor(Math.random() * imgs.length)]);
@@ -96,6 +101,7 @@ const Header = () => {
     };
   }, []);
 
+  //section for the movement on scroll
   const [scrollAmount, setScrollAmount] = useState(0);
 
   useEffect(() => {

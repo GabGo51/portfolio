@@ -13,7 +13,7 @@ const Projects = () => {
       
       const scrollPosition = window.scrollY;
       console.log(scrollPosition);
-      const triggerPosition = 3600; // Adjust this value to set the scroll amount for the title to appear
+      const triggerPosition = 3200; // Adjust this value to set the scroll amount for the title to appear
 
       if(scrollPosition >= triggerPosition){
         setShowTitle(true)
@@ -92,7 +92,7 @@ font-family: Canter;
 font-style: italic;
 font-size: 9.1vw;
 opacity: 0;
-transition: 0.4s;
+transition: 1.2s;
 transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
 &.show{
   opacity: 1;
@@ -101,7 +101,7 @@ transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
 `
 const Feat = styled.p`
 opacity: 0;
-transition: 0.4s;
+transition: 1.2s;
 transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
 &.show{
   opacity: 1;
