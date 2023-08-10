@@ -4,7 +4,7 @@ import { styled } from 'styled-components'
 const Nav = () => {
   return (
     <Container target="#" href='https://www.linkedin.com/in/gabriel-gosselin-802bb5247/'>
-      <i class="fa-brands fa-linkedin"></i>
+      <i className="fa-brands fa-linkedin"></i>
     </Container>
     
   )

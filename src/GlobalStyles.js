@@ -18,6 +18,7 @@ export default createGlobalStyle`
   *:after {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
+    cursor: none;
   }
   
   html, body, div,

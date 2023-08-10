@@ -4,9 +4,12 @@ import About from "./About";
 import Me from "./Me";
 import Projects from "./Projects";
 import Nav from "./Nav"
+import Cursor from "./Cursor";
+
 function App() {
   return (
   <Box>
+    <Cursor/>
     <Nav/>
     <Header/>
     <About/>
@@ -15,6 +18,7 @@ function App() {
   </Box>
   );
 }
+
 
 const Box = styled.div`
 display: flex;

@@ -25,19 +25,20 @@ const TechStack = () =>{
 
   return(
   <Container id = "techstack">
+    <p>***Move me around</p>
     <Box>
       <Title className={showTitle ? 'show' : ''}> MY STACK</Title>
-      {/* <i class="fa-solid fa-code "></i> */}
+      {/* <i className="fa-solid fa-code "></i> */}
     </Box>
     
     <IconContainer>
-      <i class="fa-brands fa-react" ></i>
-      <i class="fa-brands fa-js" ></i>
-      <i class="fa-brands fa-html5" ></i>
-      <i class="fa-brands fa-css3" ></i>
-      <i class="fa-brands fa-git-alt" ></i>
-      <i class="fa-brands fa-node-js"></i>
-      <i class="fa-brands fa-envira"></i>
+      <i className="fa-brands fa-react" ></i>
+      <i className="fa-brands fa-js" ></i>
+      <i className="fa-brands fa-html5" ></i>
+      <i className="fa-brands fa-css3" ></i>
+      <i className="fa-brands fa-git-alt" ></i>
+      <i className="fa-brands fa-node-js"></i>
+      <i className="fa-brands fa-envira"></i>
       
       
     </IconContainer>
@@ -52,8 +53,21 @@ flex-wrap: wrap;
 justify-content: center;
 flex-direction: column;
 align-items: center;
-margin-top: 15vw;
+margin-top: 5vw;
 margin-bottom: 10vw;
+p{
+  transform: translateX(160%);
+  margin-bottom: 10vw;
+}
+
+@media screen and (max-width: 600px) {
+  p{
+  
+  display: none;
+ 
+}
+}
+
 `
 
 const Box  = styled.div`
@@ -63,7 +77,7 @@ justify-content: center;
 margin-bottom: 10vw;
 `
 
-const Title = styled.p`
+const Title = styled.h3`
 font-size: 6vw;
 font-family: Canter;
 font-style: italic;
