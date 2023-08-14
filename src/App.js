@@ -5,8 +5,11 @@ import Me from "./Me";
 import Projects from "./Projects";
 import Nav from "./Nav"
 import Cursor from "./Cursor";
+import Contact from "./Contact";
+
 
 function App() {
+
   return (
   <Box>
     <Cursor/>
@@ -15,6 +18,7 @@ function App() {
     <About/>
     <Me/>
     <Projects/>
+    <Contact/>
   </Box>
   );
 }

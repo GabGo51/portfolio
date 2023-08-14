@@ -1,19 +1,26 @@
 import styled from "styled-components"
 import useMousePosition from "./hooks/useMousePosition";
+import { MouseContext } from "./context/mouseContext";
+import { useContext } from "react";
+
+
 
 const Cursor = () => {
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+  
     // 1.
   const { x, y } = useMousePosition();
   return (
     <Container>
             {/* 2. */}
       <Ring
+        className={cursorType === 'hovered' ? 'hovered' : ''}
         style={{ left: `${x}px`, top: `${y}px` }}
         
       ></Ring>
             {/* 3. */}
       <Dot
-        
+        className={cursorType === 'hovered' ? 'hovered' : ''}
         style={{ left: `${x}px`, top: `${y}px` }}
       ></Dot>
     </Container>
@@ -41,6 +48,15 @@ const Ring = styled.div`
   transition-timing-function: ease-out;
   will-change: width, height, transform, border;
   pointer-events: none;
+  
+
+  &.hovered{
+    width: 60px;
+    height: 60px;
+    
+    
+    border-width: 3px;
+  }
 `
 
 const Dot = styled.div`
@@ -55,6 +71,11 @@ const Dot = styled.div`
   transform: translate(-50%, -50%);
   z-index: 999;
   pointer-events: none;
+
+  &.hovered{
+    display: none;
+    
+  }
 ` 
   
 

@@ -2,11 +2,19 @@ import React from "react";
 import { styled } from "styled-components";
 import Marquee from "react-fast-marquee";
 import Moi from "./img/boutme.jpg";
+import { useContext } from "react";
+import { MouseContext } from "./context/mouseContext";
 const Me = () => {
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
   return (
     <>
       <Container>
-        <Box>
+        <Box
+          target="#"
+          href="https://www.instagram.com/gab_go_fast___/"
+          onMouseEnter={() => cursorChangeHandler("hovered")}
+          onMouseLeave={() => cursorChangeHandler("")}
+        >
           <CustomMarquee speed={70}>
             <p>ABOUT</p>
             <span>-</span>
@@ -68,7 +76,10 @@ const Container = styled.div`
   }
 `;
 
-const Box = styled.div``;
+const Box = styled.a`
+color: black;
+text-decoration: none;
+`;
 const CustomMarquee = styled(Marquee)`
   display: flex;
   flex-wrap: nowrap;

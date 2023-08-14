@@ -72,7 +72,7 @@ const Container = styled.div`
 background-color:black;
 width: 100vw;
 color: white;
-padding-bottom: 400px;
+padding-bottom: 10vw;
 padding-top: 200px;
 z-index: 30;
 display: flex;
