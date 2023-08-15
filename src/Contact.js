@@ -14,7 +14,7 @@ const Contact = () => {
     <Container>
       
       <p>
-        E-MAIL: gosseling.gab@gmail.com
+        E-MAIL: gosselin.gab51@gmail.com
       </p>
       <p>
         PHONE: 450-712-7842
