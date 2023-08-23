@@ -12,15 +12,15 @@ const Cursor = () => {
   const { x, y } = useMousePosition();
   return (
     <Container>
-            {/* 2. */}
+            
       <Ring
-        className={cursorType === 'hovered' ? 'hovered' : ''}
+        className={cursorType === 'hovered' || 'button' ? cursorType : ''}
         style={{ left: `${x}px`, top: `${y}px` }}
         
       ></Ring>
-            {/* 3. */}
+            
       <Dot
-        className={cursorType === 'hovered' ? 'hovered' : ''}
+        className={cursorType === 'hovered' || 'button' ? cursorType : ''}
         style={{ left: `${x}px`, top: `${y}px` }}
       ></Dot>
     </Container>
@@ -57,6 +57,12 @@ const Ring = styled.div`
     
     border-width: 3px;
   }
+
+  &.button{
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+  }
 `
 
 const Dot = styled.div`
@@ -75,6 +81,9 @@ const Dot = styled.div`
   &.hovered{
     display: none;
     
+  }
+  &.button{
+    display: none;
   }
 ` 
   

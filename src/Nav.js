@@ -7,7 +7,7 @@ const Nav = () => {
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
   return (
     <Container
-      onMouseEnter={() => cursorChangeHandler("hovered")}
+      onMouseEnter={() => cursorChangeHandler("button")}
       onMouseLeave={() => cursorChangeHandler("")}
       target="#"
       href="https://www.linkedin.com/in/gabriel-gosselin-802bb5247/"

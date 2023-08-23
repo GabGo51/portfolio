@@ -4,8 +4,11 @@ import proj1 from "./img/proj1.png"
 import proj2 from "./img/proj2.PNG"
 import proj3 from "./img/proj3.PNG"
 import { useState, useEffect } from 'react'
+import { useContext } from "react";
+import { MouseContext } from "./context/mouseContext";
 
 const Projects = () => {
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
   const [showTitle, setShowTitle] = useState(false);
 
   useEffect(() => {
@@ -31,14 +34,22 @@ const Projects = () => {
         <Proj className={showTitle ? 'show' : ''}>PROJECTS &</Proj>
         <Feat className={showTitle ? 'show' : ''}>FEATURED WORKS</Feat>
       </Title>
-      <Project1>
+      <Project1
+      onMouseEnter={() => cursorChangeHandler("hovered")}
+      onMouseLeave={() => cursorChangeHandler("")}>
         <a target='#' href=''>
         <Bloom>BLOOM</Bloom>
         
           <Proj1 src={proj1}/>
         </a>
+        <a target='#' href='https://github.com/GabGo51/plant-care-app' onMouseEnter={() => cursorChangeHandler("button")}
+      onMouseLeave={() => cursorChangeHandler("")}>
+          <i className="one fa-brands fa-square-github"></i>
+        </a>
       </Project1>
-      <Project1>
+      <Project1
+      onMouseEnter={() => cursorChangeHandler("hovered")}
+      onMouseLeave={() => cursorChangeHandler("")}>
         <a target='#' href='https://meow-twitter.vercel.app/'>
         <Box>
           <GadgetGo>MEOW</GadgetGo>
@@ -46,15 +57,24 @@ const Projects = () => {
         
           <Proj2 src={proj2}/>
         </a>
-        
+        <a target='#' href='https://github.com/GabGo51/meow-twitter' onMouseEnter={() => cursorChangeHandler("button")}
+      onMouseLeave={() => cursorChangeHandler("")}>
+          <i className="two fa-brands fa-square-github"></i>
+        </a>
       </Project1>
-      <Project1>
+      <Project1
+      onMouseEnter={() => cursorChangeHandler("hovered")}
+      onMouseLeave={() => cursorChangeHandler("")}>
         <a target='#' href='https://gadgetgo.vercel.app/'>
         <Box>
           <Social>GADGETGO</Social>
         </Box>
         
           <Proj2 src={proj3}/>
+        </a>
+        <a target='#' href='https://github.com/jasmineplqn/E-commerce-Website' onMouseEnter={() => cursorChangeHandler("button")}
+      onMouseLeave={() => cursorChangeHandler("")}>
+          <i className="three fa-brands fa-square-github"></i>
         </a>
         
       </Project1>
@@ -79,6 +99,17 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+ i{
+  position: absolute;
+  top: 1vw;
+  left: 2vw;
+  scale: 2;
+  color: black;
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+ }
+
 `
 
 const Title = styled.div`
@@ -111,7 +142,35 @@ transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
 
 const Project1 = styled.div`
 position: relative;
+.two{
+  color: white;
+}
 
+/* .one{
+  scale: 2;
+  position: absolute;
+  top: 7.3vw;
+  right: 25.3vw;
+  color: white;
+}
+
+.two{
+  scale: 2;
+  position: absolute;
+  top: 10.5vw;
+  left: 5.4vw;
+  color: white;
+
+}
+
+.three{
+  scale: 2;
+  position: absolute;
+  top: 10vw;
+  left: 5.4vw;
+  color: black;
+
+} */
 `
 
 const Proj1 = styled.img`
@@ -150,10 +209,11 @@ const Social = styled.p`
 position: absolute;
 color: black;
 left: 5vw;
+top: -1.5vw;
 font-size: 5.2vw;
 border-bottom:0.5vw solid black ;
 transform: translateY(20%);
-
-
 `
+
+
 export default Projects
