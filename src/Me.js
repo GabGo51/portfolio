@@ -6,6 +6,12 @@ import { useContext } from "react";
 import { MouseContext } from "./context/mouseContext";
 const Me = () => {
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+  const screeWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  let speed = 70
+  if (screeWidth < 500){
+    speed = 25
+  }
+  
   return (
     <>
       <Container>
@@ -15,7 +21,7 @@ const Me = () => {
           onMouseEnter={() => cursorChangeHandler("hovered")}
           onMouseLeave={() => cursorChangeHandler("")}
         >
-          <CustomMarquee speed={70}>
+          <CustomMarquee speed={speed}>
             <p>ABOUT</p>
             <span>-</span>
             <p>ME</p>

@@ -196,7 +196,7 @@ const Container = styled.div`
   i {
     position: absolute;
     right: -20px;
-    top: 41vw;
+    top: 42vw;
     scale: 2.5;
     transform: ${({ scrollAmount }) =>
       scrollAmount ? `translateY(${scrollAmount}%)` : `translateX(0%)`};
