@@ -70,8 +70,9 @@ const Box = styled.div`
   width: 350px;
   border-radius: 50%;
   @media screen and (max-width: 600px) {
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
+  margin-top: -150px;
   }
   background-image:url(${Gab}) ;
   

@@ -5,20 +5,27 @@ const TechStack = () =>{
   const [showTitle, setShowTitle] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      
-      const scrollPosition = window.scrollY;
-      
-      const triggerPosition = 1200; // Adjust this value to set the scroll amount for the title to appear
+    const titleElement = document.querySelector(".title"); // Add class to your title element
 
-      if(scrollPosition >= triggerPosition){
-        setShowTitle(true)
-      };
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, // Adjust this threshold as needed
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setShowTitle(true);
+          observer.disconnect(); // Stop observing once animation is triggered
+        }
+      });
+    }, options);
+
+    observer.observe(titleElement);
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect(); // Disconnect the observer when the component unmounts
     };
   }, []);
 
@@ -27,7 +34,7 @@ const TechStack = () =>{
   <Container id = "techstack">
     <p>***Move me around</p>
     <Box>
-      <Title className={showTitle ? 'show' : ''}> MY STACK</Title>
+      <Title className={`title ${showTitle ? 'show' : ''}`}> MY STACK</Title>
       {/* <i className="fa-solid fa-code "></i> */}
     </Box>
     
@@ -54,7 +61,7 @@ justify-content: center;
 flex-direction: column;
 align-items: center;
 margin-top: 5vw;
-margin-bottom: 10vw;
+margin-bottom: 5vw;
 p{
   transform: translateX(160%);
   margin-bottom: 10vw;
@@ -74,7 +81,10 @@ const Box  = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
-margin-bottom: 10vw;
+margin-bottom: 5vw;
+@media screen and (max-width: 600px) {
+  margin-top: 20vw;
+}
 `
 
 const Title = styled.h3`
@@ -92,9 +102,7 @@ transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
 }
 
 
-@media screen and (max-width: 600px) {
-  
-  }
+
 `
 
 const IconContainer = styled.div`
@@ -105,7 +113,7 @@ align-items: center;
 width: 100vw;
 
 i{
-  margin: 50px 80px;
+  margin: 40px 80px;
   scale: 6;
   @media screen and (max-width: 600px) {
   scale: 3;

@@ -178,11 +178,9 @@ const Box = styled.div`
   background-color: black;
   color: white;
   padding-top: 50px;
-  padding-bottom: 1700px;
+  padding-bottom: 100vw;
   width: 100vw;
-  @media screen and (max-width: 600px) {
-    padding-bottom: 650px;
-  }
+  
   img {
     object-fit: cover;
     background-position: top;

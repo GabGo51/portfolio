@@ -12,26 +12,36 @@ const Projects = () => {
   const [showTitle, setShowTitle] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      console.log(scrollPosition);
-      const triggerPosition = 3200; // Adjust this value to set the scroll amount for the title to appear
+    const titleElement = document.querySelector(".title2"); // Add class to your title element
 
-      if (scrollPosition >= triggerPosition) {
-        setShowTitle(true);
-      }
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, // Adjust this threshold as needed
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            setShowTitle(true);
+          }, 250);
+          observer.disconnect(); // Stop observing once animation is triggered
+        }
+      });
+    }, options);
+
+    observer.observe(titleElement);
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect(); // Disconnect the observer when the component unmounts
     };
   }, []);
   return (
     <Container>
       <Title>
-        <Proj className={showTitle ? "show" : ""}>PROJECTS &</Proj>
-        <Feat className={showTitle ? "show" : ""}>FEATURED WORKS</Feat>
+        <Proj className={`title2 ${showTitle ? "show" : ""}`}>PROJECTS &</Proj>
+        <Feat className={`title2 ${showTitle ? "show" : ""}`}>FEATURED WORKS</Feat>
       </Title>
       <Project1
         onMouseEnter={() => cursorChangeHandler("hovered")}
