@@ -188,7 +188,7 @@ const Proj2 = styled.img`
 
 const Bloom = styled.p`
   position: absolute;
-  color: white;
+  color: black;
   right: 5vw;
   font-size: 5.2vw;
   border-bottom: 0.5vw solid white;
