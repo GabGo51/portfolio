@@ -110,7 +110,7 @@ const Container = styled.div`
   width: 100vw;
   color: white;
   padding-bottom: 10vw;
-  padding-top: 200px;
+  padding-top: 15vw;
   z-index: 30;
   display: flex;
   flex-direction: column;
@@ -126,12 +126,18 @@ const Container = styled.div`
       display: none;
     }
   }
+  @media screen and (max-width: 500px) {
+      padding-top: 25vw;
+    }
 `;
 
 const Title = styled.div`
   font-size: 8vw;
   line-height: 6.5vw;
   margin-bottom: 8vw;
+  @media screen and (max-width: 600px) {
+    line-height:35px
+  }
 `;
 const Proj = styled.p`
   font-family: Canter;

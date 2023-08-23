@@ -120,6 +120,18 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const screeWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+  let screenScrollNumber = 10
+
+  if (screeWidth < 1000){
+    screenScrollNumber = 5
+  }
+  if (screeWidth < 500){
+    screenScrollNumber = 2
+  }
+
+ 
 
   return (
     <Box showDelay={showDelay} scrollAmount={scrollAmount}>
@@ -127,28 +139,28 @@ const Header = () => {
         <Name
           showDelay={showDelay}
           className={showTitle ? "show" : ""}
-          scrollAmount={scrollAmount / 10}
+          scrollAmount={scrollAmount / screenScrollNumber}
         >
           GABRIEL
         </Name>
         <LastName
           showDelay={showDelay}
           className={showTitle ? "show" : ""}
-          scrollAmount={scrollAmount / 10}
+          scrollAmount={scrollAmount / screenScrollNumber}
         >
           GOSSELIN
         </LastName>
         <Digital
           showDelay={showDelay}
           className={showTitle ? "show" : ""}
-          scrollAmount={scrollAmount / 10}
+          scrollAmount={scrollAmount / screenScrollNumber}
         >
           WEB
         </Digital>
         <Portfoio
           showDelay={showDelay}
           className={showTitle ? "show" : ""}
-          scrollAmount={scrollAmount / 10}
+          scrollAmount={scrollAmount / screenScrollNumber}
         >
           DEVELOPER
         </Portfoio>
@@ -180,6 +192,9 @@ const Box = styled.div`
   padding-top: 50px;
   padding-bottom: 100vw;
   width: 100vw;
+  @media screen and (max-width: 600px) {
+    padding-bottom: 500px;
+  }
   
   img {
     object-fit: cover;
@@ -200,6 +215,10 @@ const Container = styled.div`
     scale: 2.5;
     transform: ${({ scrollAmount }) =>
       scrollAmount ? `translateY(${scrollAmount}%)` : `translateX(0%)`};
+  }
+
+  @media screen and (max-width: 600px) {
+    line-height:45px
   }
 `;
 const Name = styled.p`
@@ -281,6 +300,13 @@ const Bubble = styled.img`
   background-color: #ececec;
   transform: ${({ scrollAmount }) =>
     scrollAmount ? `translateY(${scrollAmount}%)` : `translateY(0%)`};
+
+  @media screen and (max-width: 600px) {
+    width:25vw;
+    height:15vw;
+    top:5vw;
+    left:4vw;
+  }
 `;
 const Bubble2 = styled.img`
   width: 15vw;
@@ -291,7 +317,12 @@ const Bubble2 = styled.img`
   background-color: #ececec;
   transform: ${({ scrollAmount }) =>
     scrollAmount ? `translateY(${scrollAmount}%)` : `translateY(126.5%)`};
-  /* transform:translateY(130%); */
+  @media screen and (max-width: 600px) {
+    width:25vw;
+    height:15vw;
+    right:5vw;
+    top:9vw;
+  }
 `;
 const Bubble3 = styled.img`
   width: 15vw;
@@ -303,6 +334,11 @@ const Bubble3 = styled.img`
     scrollAmount ? `translateY(${scrollAmount}%)` : `translateY(258%)`};
   /* transform:translateY(240%); */
   background-color: #ececec;
+  @media screen and (max-width: 600px) {
+    width:25vw;
+    height:15vw;
+    top:20vw;
+  }
 `;
 const Bubble4 = styled.img`
   width: 15vw;
@@ -315,5 +351,9 @@ const Bubble4 = styled.img`
   /* transform:translateY(360%); */
   background-color: #ececec;
   mix-blend-mode: difference;
+  @media screen and (max-width: 600px) {
+    width:25vw;
+    height:15vw;
+  }
 `;
 export default Header;
