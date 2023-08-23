@@ -191,7 +191,7 @@ const Bloom = styled.p`
   color: black;
   right: 5vw;
   font-size: 5.2vw;
-  border-bottom: 0.5vw solid white;
+  border-bottom: 0.5vw solid black;
 `;
 const Box = styled.div`
   background-color: rgba(248, 248, 248, 1);
