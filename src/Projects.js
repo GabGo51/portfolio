@@ -47,7 +47,7 @@ const Projects = () => {
         onMouseEnter={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")}
       >
-        <a target="#" href="">
+        <a target="#" href="https://plant-care-app.vercel.app/">
           <Bloom>BLOOM</Bloom>
 
           <Proj1 src={proj1} />

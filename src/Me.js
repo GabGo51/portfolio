@@ -4,6 +4,7 @@ import Marquee from "react-fast-marquee";
 import Moi from "./img/boutme.jpg";
 import { useContext } from "react";
 import { MouseContext } from "./context/mouseContext";
+import Music from "./img/music.PNG"
 const Me = () => {
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
   const screeWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -46,6 +47,9 @@ const Me = () => {
           captivate and engage users.
         </Text>
         <Round></Round>
+        {/* <MusicBox>
+          <Spotify src={Music}></Spotify>
+        </MusicBox> */}
       </Container>
     </>
   );
@@ -126,6 +130,16 @@ const Text = styled.h4`
     width: 64vw;
   }
 `;
+
+const MusicBox = styled.div`
+position: absolute;
+bottom: 5vw;
+`
+const Spotify = styled.img`
+border-radius: 30px;
+scale: 0.6;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+`
 const Round = styled.div`
   width: 100vw;
   height: 100px;

@@ -1,58 +1,20 @@
-import  styled  from "styled-components"
+import  styled, {keyframes}  from "styled-components"
 import { useState, useEffect } from "react";
 
-const TechStack = () =>{
-  const [showTitle, setShowTitle] = useState(false);
 
-  useEffect(() => {
-    const titleElement = document.querySelector(".title"); // Add class to your title element
-
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5, // Adjust this threshold as needed
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setShowTitle(true);
-          observer.disconnect(); // Stop observing once animation is triggered
-        }
-      });
-    }, options);
-
-    observer.observe(titleElement);
-
-    return () => {
-      observer.disconnect(); // Disconnect the observer when the component unmounts
-    };
-  }, []);
+const waveAnimation = keyframes`
+  0% {
+    transform: translateY(0%);
+  }
+  50%{
+    transform: translateY(-20%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+`;
 
 
-  return(
-  <Container id = "techstack">
-    <p>***Move me around</p>
-    <Box>
-      <Title className={`title ${showTitle ? 'show' : ''}`}> MY STACK</Title>
-      {/* <i className="fa-solid fa-code "></i> */}
-    </Box>
-    
-    <IconContainer>
-      <i className="fa-brands fa-react" ></i>
-      <i className="fa-brands fa-js" ></i>
-      <i className="fa-brands fa-html5" ></i>
-      <i className="fa-brands fa-css3" ></i>
-      <i className="fa-brands fa-git-alt" ></i>
-      <i className="fa-brands fa-node-js"></i>
-      <i className="fa-brands fa-envira"></i>
-      
-      
-    </IconContainer>
-  </Container>
-  )
-
-}
 
 const Container = styled.div`
 display: flex;
@@ -119,11 +81,88 @@ i{
   scale: 3;
   margin: 40px;
   }
+
+  &.fa-react{
+  animation: ${waveAnimation} 3s infinite;
+  }
+  &.fa-js{
+  animation: ${waveAnimation} 3s infinite;
+  animation-delay: 0.3s;
+  }
+  &.fa-html5{
+  animation: ${waveAnimation} 3s infinite;
+  animation-delay: 0.6s;
+  }
+  &.fa-css3{
+  animation: ${waveAnimation} 3s infinite;
+  animation-delay: 0.9s;
+  }
+  &.fa-git-alt{
+  animation: ${waveAnimation} 3s infinite;
+  animation-delay: 1.2s;
+  }
+  &.fa-node-js{
+  animation: ${waveAnimation} 3s infinite;
+  animation-delay: 1.5s;
+  }
+  &.fa-envira{
+  animation: ${waveAnimation} 3s infinite;
+  animation-delay: 1.8s;
+  }
+
+}
+`
+const TechStack = () =>{
+  const [showTitle, setShowTitle] = useState(false);
+
+  useEffect(() => {
+    const titleElement = document.querySelector(".title"); // Add class to your title element
+
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, // Adjust this threshold as needed
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setShowTitle(true);
+          observer.disconnect(); // Stop observing once animation is triggered
+        }
+      });
+    }, options);
+
+    observer.observe(titleElement);
+
+    return () => {
+      observer.disconnect(); // Disconnect the observer when the component unmounts
+    };
+  }, []);
+
+
+  return(
+  <Container id = "techstack">
+    <p>***Move me around</p>
+    <Box>
+      <Title className={`title ${showTitle ? 'show' : ''}`}> MY STACK</Title>
+      {/* <i className="fa-solid fa-code "></i> */}
+    </Box>
+    
+    <IconContainer>
+      <i className="fa-brands fa-react" ></i>
+      <i className="fa-brands fa-js" ></i>
+      <i className="fa-brands fa-html5" ></i>
+      <i className="fa-brands fa-css3" ></i>
+      <i className="fa-brands fa-git-alt" ></i>
+      <i className="fa-brands fa-node-js"></i>
+      <i className="fa-brands fa-envira"></i>
+    </IconContainer>
+  </Container>
+  )
+
 }
 
-
-
-`
 
 
 export default TechStack
