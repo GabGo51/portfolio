@@ -39,9 +39,9 @@ const Me = () => {
         </Box>
         <img src={Moi} />
         <Text>
-          I'm a dev with a passion for Web Design, snowboard, rock climbing and
-          gaming/anime. When I'm not geeking online, you'll find me outside
-          either climbing up the mountains or snowboarding down them. As a web
+          I'm a developer with a passion for Web Design, snowboard, rock climbing and
+          gaming/anime. When I'm not geeking out online, you'll find me outside
+          either climbing mountains or snowboarding down them. As a web
           developer, I'm fascinated by the intersection of technology and
           creativity. I strive to create seamless user experiences that
           captivate and engage users.

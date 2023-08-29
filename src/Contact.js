@@ -1,38 +1,196 @@
-import React from 'react'
-import { styled } from 'styled-components'
-
-
-
-
-
-
-
+import React from "react";
+import { styled } from "styled-components";
+import { useState, useRef, useEffect } from "react";
+import { useContext } from "react";
+import { MouseContext } from "./context/mouseContext";
+import PDF from "./img/CV.pdf"
 
 const Contact = () => {
-  
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+  const iconRef = useRef(null);
+  const [rotationAngle, setRotationAngle] = useState(0);
+
+  const updateRotation = (event) => {
+    const icon = iconRef.current;
+    if (icon) {
+      const { left, top, width, height } = icon.getBoundingClientRect();
+      const centerX = left + width / 2;
+      const centerY = top + height;
+      const angle = Math.atan2(
+        event.clientY - centerY,
+        event.clientX - centerX
+      );
+      setRotationAngle((angle * 180) / Math.PI + 95);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousemove", updateRotation);
+    return () => {
+      window.removeEventListener("mousemove", updateRotation);
+    };
+  }, []);
+
+  const handleEmailButtonClick = () => {
+    const email = 'gosselin.gab51@gmail.com';
+    const subject = 'Portfolio Contact';
+    const body = '';
+
+    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.open(mailtoUrl);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <Container>
-      
-      <p>
-        E-MAIL: gosselin.gab51@gmail.com
-      </p>
-      <p>
-        PHONE: 450-712-7842
-      </p>
-      
-      
+      <Box>
+        <Title>LET'S GET</Title>
+        <Title2>IN TOUCH</Title2>
+      </Box>
+
+      <Content>
+        
+          <button
+            onClick={handleEmailButtonClick}
+            onMouseEnter={() => cursorChangeHandler("hovered")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
+            E-mail
+          </button>
+        
+
+        <a target="#" href={PDF}>
+          <button
+            onMouseEnter={() => cursorChangeHandler("hovered")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
+            CV
+          </button>
+        </a>
+        <a target="#" href="https://www.linkedin.com/in/gabriel-gosselin-802bb5247/">
+          <button
+            onMouseEnter={() => cursorChangeHandler("hovered")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
+            Linkedin
+          </button>
+        </a>
+        <a target="#" href="https://github.com/GabGo51">
+          <button
+            onMouseEnter={() => cursorChangeHandler("hovered")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
+            GitHub
+          </button>
+        </a>
+      </Content>
+
+      <IconContainer ref={iconRef} rotation={rotationAngle}>
+        <i className="fa-solid fa-hand-point-up"></i>
+      </IconContainer>
+      <Top onClick={scrollToTop}>
+        <i class="fa-solid fa-arrow-up"></i>
+      </Top>
+      <Footer>
+        <p>Gabriel Gosselin</p>
+        <p>gosselin.gab51@gmail.com || +1 (450) 712 7842</p>
+      </Footer>
     </Container>
-  )
-}
+  );
+};
 const Container = styled.div`
+  position: relative;
+  margin-top: -5vw;
+  background-color: black;
+  color: white;
+  width: 100vw;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 200px;
+  z-index: 99;
+  i {
+    scale: 5;
+  }
+`;
 
-background-color: black;
-color: white;
-width: 100vw;
-padding: 20px;
-`
+const Box = styled.div`
+  line-height: 6.5vw;
+  margin-bottom: 5vw;
+`;
 
+const Title = styled.h3`
+  font-family: Canter;
+  font-size: 10vw;
+  font-style: italic;
+  font-weight: 200;
+`;
+const Title2 = styled.h3`
+  font-size: 9.4vw;
+  font-weight: 400;
+`;
 
+const Content = styled.section`
+  margin-bottom: 10vw;
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
 
+  button {
+    height: 5vw;
+    width: 5vw;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    transition: 0.4s;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 30%;
+    &:hover {
+      background-color: white;
+      color: black;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 0%;
+      border-bottom-left-radius: 30%;
+    }
+  }
+`;
+const IconContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease-out;
+  transform-origin: bottom center;
+  transform: rotate(${(props) => props.rotation}deg);
+  i {
+    font-size: 2rem;
+  }
+`;
 
-export default Contact
+const Top = styled.div`
+  position: absolute;
+  bottom: 5vw;
+  right: 5vw;
+  transition: 200ms;
+
+  &:hover {
+    transform: translateY(-60%);
+  }
+`;
+
+const Footer = styled.div`
+  position: absolute;
+  bottom: 1vw;
+  left: 1vw;
+  opacity: 0.5;
+`;
+
+export default Contact;

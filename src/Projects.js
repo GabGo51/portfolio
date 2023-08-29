@@ -166,32 +166,6 @@ const Project1 = styled.div`
   .two {
     color: white;
   }
-
-  /* .one{
-  scale: 2;
-  position: absolute;
-  top: 7.3vw;
-  right: 25.3vw;
-  color: white;
-}
-
-.two{
-  scale: 2;
-  position: absolute;
-  top: 10.5vw;
-  left: 5.4vw;
-  color: white;
-
-}
-
-.three{
-  scale: 2;
-  position: absolute;
-  top: 10vw;
-  left: 5.4vw;
-  color: black;
-
-} */
 `;
 
 const Proj1 = styled.img`

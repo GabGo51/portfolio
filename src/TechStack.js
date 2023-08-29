@@ -52,6 +52,7 @@ margin-bottom: 5vw;
 const Title = styled.h3`
 font-size: 6vw;
 font-family: Canter;
+margin-top: 10vw;
 font-style: italic;
 font-weight: 500;
 opacity: 0;
@@ -143,7 +144,7 @@ const TechStack = () =>{
 
   return(
   <Container id = "techstack">
-    <p>***Move me around</p>
+    
     <Box>
       <Title className={`title ${showTitle ? 'show' : ''}`}> MY STACK</Title>
       {/* <i className="fa-solid fa-code "></i> */}
