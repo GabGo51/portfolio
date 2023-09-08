@@ -63,6 +63,10 @@ const Ring = styled.div`
     height: 40px;
     border-radius: 0;
   }
+
+  @media (max-width:500px){
+    display: none;
+  }
 `
 
 const Dot = styled.div`
@@ -83,6 +87,9 @@ const Dot = styled.div`
     
   }
   &.button{
+    display: none;
+  }
+  @media (max-width:500px){
     display: none;
   }
 ` 

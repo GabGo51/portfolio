@@ -182,7 +182,7 @@ const Content = styled.section`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
     flex-direction: column;
     width: 100vw;
     align-items: center;
@@ -209,10 +209,13 @@ const Content = styled.section`
     }
 
     @media (max-width: 800px) {
-      width: 55vw;
-      margin: 4vw 0vw;
+      width: 40vw;
+      margin: 3vw 0vw;
       border-radius: 0%;
-      padding: 10px;
+      height: 50px;
+      &:hover{
+        border-radius: 0%;
+      }
 
     }
   }
