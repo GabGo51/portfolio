@@ -103,21 +103,25 @@ const Header = () => {
 
   //section for the movement on scroll
   const [scrollAmount, setScrollAmount] = useState(0);
+  const updateScrollProgress = () => {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const currentScroll = window.scrollY;
+    const progress = (currentScroll / maxScroll) * 100;
+    if(progress>25){
+      setScrollAmount(0)
+    }else{
+      setScrollAmount(progress*10);
+    }
+    
+  };
 
   useEffect(() => {
-    // Function to update the scroll amount state whenever the user scrolls.
-    const handleScroll = () => {
-      // Use requestAnimationFrame to throttle the updates
-      requestAnimationFrame(() => {
-        setScrollAmount(window.scrollY / 5);
-      });
-    };
     // Add the event listener to the 'scroll' event
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", updateScrollProgress);
 
     // Remove the event listener when the component unmounts to prevent memory leaks
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", updateScrollProgress);
     };
   }, []);
 
