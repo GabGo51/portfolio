@@ -22,9 +22,9 @@ import Image18 from "./img/dimple.PNG";
 import Image19 from "./img/sanji.PNG";
 
 import { useState, useEffect } from "react";
-//This compo has the main text and img 
+//This compo has the main text and img
 const Header = () => {
-  //array of img to pick them randomly 
+  //array of img to pick them randomly
   const imgs = [
     Image1,
     Image3,
@@ -120,18 +120,21 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const screeWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-  let screenScrollNumber = 10
+  
+  const screeWidth =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
 
-  if (screeWidth < 1000){
-    screenScrollNumber = 5
+  let screenScrollNumber = 10;
+
+  if (screeWidth < 1000) {
+    screenScrollNumber = 5;
   }
-  if (screeWidth < 500){
-    screenScrollNumber = 2
+  if (screeWidth < 500) {
+    screenScrollNumber = 2;
   }
-
- 
 
   return (
     <Box showDelay={showDelay} scrollAmount={scrollAmount}>
@@ -195,7 +198,7 @@ const Box = styled.div`
   @media screen and (max-width: 600px) {
     padding-bottom: 500px;
   }
-  
+
   img {
     object-fit: cover;
     background-position: top;
@@ -218,7 +221,7 @@ const Container = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    line-height:45px
+    line-height: 45px;
   }
 `;
 const Name = styled.p`
@@ -246,7 +249,7 @@ const LastName = styled.p`
   font-family: Canter;
   font-size: 12.8vw;
   font-style: italic;
-  
+
   opacity: 0;
   transition: ${({ showDelay }) => (showDelay ? `0.1s` : `1.2s`)};
   transform: translate3d(-15px, -15px, 0) rotate3d(1, -0.05, -0.03, 90deg);
@@ -281,7 +284,7 @@ const Portfoio = styled.p`
   opacity: 0;
   transition: ${({ showDelay }) => (showDelay ? `0.1s` : `1.2s`)};
   transform: translate3d(-15px, -15px, 0) rotate3d(1, -0.05, -0.03, 90deg);
-  
+
   &.show {
     opacity: 1;
     transform: ${({ scrollAmount }) =>
@@ -302,10 +305,10 @@ const Bubble = styled.img`
     scrollAmount ? `translateY(${scrollAmount}%)` : `translateY(0%)`};
 
   @media screen and (max-width: 600px) {
-    width:25vw;
-    height:15vw;
-    top:5vw;
-    left:4vw;
+    width: 25vw;
+    height: 15vw;
+    top: 5vw;
+    left: 4vw;
   }
 `;
 const Bubble2 = styled.img`
@@ -318,10 +321,10 @@ const Bubble2 = styled.img`
   transform: ${({ scrollAmount }) =>
     scrollAmount ? `translateY(${scrollAmount}%)` : `translateY(126.5%)`};
   @media screen and (max-width: 600px) {
-    width:25vw;
-    height:15vw;
-    right:5vw;
-    top:9vw;
+    width: 25vw;
+    height: 15vw;
+    right: 5vw;
+    top: 9vw;
   }
 `;
 const Bubble3 = styled.img`
@@ -335,9 +338,9 @@ const Bubble3 = styled.img`
   /* transform:translateY(240%); */
   background-color: #ececec;
   @media screen and (max-width: 600px) {
-    width:25vw;
-    height:15vw;
-    top:20vw;
+    width: 25vw;
+    height: 15vw;
+    top: 20vw;
   }
 `;
 const Bubble4 = styled.img`
@@ -352,8 +355,8 @@ const Bubble4 = styled.img`
   background-color: #ececec;
   mix-blend-mode: difference;
   @media screen and (max-width: 600px) {
-    width:25vw;
-    height:15vw;
+    width: 25vw;
+    height: 15vw;
   }
 `;
 export default Header;
