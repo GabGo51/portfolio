@@ -25,10 +25,33 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("mousemove", updateRotation);
-    return () => {
-      window.removeEventListener("mousemove", updateRotation);
-    };
+    const icon = iconRef.current;
+
+    if (!icon) return;
+
+    // Create an Intersection Observer to check if the icon is in the viewport
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const isIconOnScreen = entries[0].isIntersecting;
+        if (isIconOnScreen) {
+          // Attach the mousemove event listener when the icon is on the screen
+          window.addEventListener('mousemove', updateRotation);
+        } else {
+          // Detach the mousemove event listener when the icon is not on the screen
+          window.removeEventListener('mousemove', updateRotation);
+        }
+      },
+      {
+        root: null,
+        threshold: 0.5, // Adjust this threshold as needed
+      }
+    );
+
+    // Start observing the icon element
+    observer.observe(icon);
+
+    // Cleanup the observer when the component unmounts
+    return () => observer.disconnect();
   }, []);
 
   const handleEmailButtonClick = () => {
