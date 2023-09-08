@@ -105,6 +105,8 @@ const Projects = () => {
   );
 };
 
+//background attachement fixed for the cool img that stay
+
 const Container = styled.div`
   background-color: black;
   width: 100vw;
