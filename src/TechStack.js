@@ -23,7 +23,7 @@ justify-content: center;
 flex-direction: column;
 align-items: center;
 margin-top: 5vw;
-margin-bottom: 5vw;
+margin-bottom: 10vw;
 p{
   transform: translateX(160%);
   margin-bottom: 10vw;

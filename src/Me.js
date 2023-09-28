@@ -4,52 +4,44 @@ import Marquee from "react-fast-marquee";
 import Moi from "./img/boutme.jpg";
 import { useContext } from "react";
 import { MouseContext } from "./context/mouseContext";
-import Music from "./img/music.PNG"
+
 const Me = () => {
-  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+  const { cursorChangeHandler } = useContext(MouseContext);
   const screeWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  let speed = 70
+  let speed = 90
   if (screeWidth < 500){
-    speed = 25
+    speed = 35
   }
   
   return (
     <>
       <Container>
         <Box
-          target="#"
-          href="https://www.instagram.com/gab_go_fast___/"
-          onMouseEnter={() => cursorChangeHandler("hovered")}
-          onMouseLeave={() => cursorChangeHandler("")}
+          // target="#"
+          // href="https://www.instagram.com/gab_go_fast___/"
+          // onMouseEnter={() => cursorChangeHandler("hovered")}
+          // onMouseLeave={() => cursorChangeHandler("")}
         >
+          <p className="intro">ABOUT ME</p>
           <CustomMarquee speed={speed}>
-            <p>ABOUT</p>
+            <p>LEARN</p>
             <span>-</span>
-            <p>ME</p>
+            <p>CREATE</p>
             <span>-</span>
-            <p>ABOUT</p>
+            <p>COMPETE</p>
             <span>-</span>
-            <p>ME</p>
+            <p>OPTIMIZE</p>
             <span>-</span>
-            <p>ABOUT</p>
-            <span>-</span>
-            <p>ME</p>
-            <span>-</span>
+            
           </CustomMarquee>
         </Box>
         <img src={Moi} />
         <Text>
-          I'm a developer with a passion for Web Design, snowboard, rock climbing and
-          gaming/anime. When I'm not geeking out online, you'll find me outside
-          either climbing mountains or snowboarding down them. As a web
-          developer, I'm fascinated by the intersection of technology and
-          creativity. I strive to create seamless user experiences that
-          captivate and engage users.
+          I'm a developer with a passion for web design, snowboard and rock climbing. When I'm not geeking out online, you'll find me outside
+          either climbing mountains or snowboarding down them. Not afraid of working in a faced paced environement, and willing to take the time and go beyond to create complex and meaninfull websites. 
         </Text>
         <Round></Round>
-        {/* <MusicBox>
-          <Spotify src={Music}></Spotify>
-        </MusicBox> */}
+        
       </Container>
     </>
   );
@@ -89,6 +81,14 @@ const Container = styled.div`
 const Box = styled.a`
 color: black;
 text-decoration: none;
+
+.intro{
+  text-align: center;
+  font-size: 6vw;
+  margin-bottom: 40px;
+  font-family: Canter;
+  font-style: italic;
+}
 `;
 const CustomMarquee = styled(Marquee)`
   display: flex;
@@ -120,13 +120,13 @@ const Text = styled.h4`
   width: 28vw;
   font-weight: 400;
   font-size: 1.2vw;
-  transform: translate3d(180%, -420%, 0);
+  transform: translate3d(180%, -480%, 0);
 
   @media screen and (max-width: 1200px) {
-    transform: translate3d(11.5vw, -130%, 0);
+    transform: translate3d(12.5vw, -90%, 0);
     background-color: white;
     padding: 20px;
-    font-size: 1.8vw;
+    font-size: 2.1vw;
     width: 64vw;
   }
 `;
