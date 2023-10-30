@@ -3,6 +3,7 @@ import styled from "styled-components";
 import proj1 from "./img/proj1.png";
 import proj2 from "./img/proj2.PNG";
 import proj3 from "./img/proj3.PNG";
+import cms from "./img/CMS.png"
 import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { MouseContext } from "./context/mouseContext";
@@ -47,6 +48,26 @@ const Projects = () => {
         onMouseEnter={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")}
       >
+        <a target="#" href="https://cms-website-pi.vercel.app/">
+          <Box>
+            <GadgetGo>CMS</GadgetGo>
+          </Box>
+
+          <Proj2 src={cms} />
+        </a>
+        <a
+          target="#"
+          href="https://github.com/GabGo51/cms-website"
+          onMouseEnter={() => cursorChangeHandler("button")}
+          onMouseLeave={() => cursorChangeHandler("hovered")}
+        >
+          <i className="two fa-brands fa-square-github"></i>
+        </a>
+      </Project1>
+      <Project1
+        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseLeave={() => cursorChangeHandler("")}
+      >
         <a target="#" href="https://plant-care-app.vercel.app/">
           <Bloom>BLOOM</Bloom>
 
@@ -61,26 +82,7 @@ const Projects = () => {
           <i className="one fa-brands fa-square-github"></i>
         </a>
       </Project1>
-      <Project1
-        onMouseEnter={() => cursorChangeHandler("hovered")}
-        onMouseLeave={() => cursorChangeHandler("")}
-      >
-        <a target="#" href="https://meow-twitter.vercel.app/">
-          <Box>
-            <GadgetGo>MEOW</GadgetGo>
-          </Box>
-
-          <Proj2 src={proj2} />
-        </a>
-        <a
-          target="#"
-          href="https://github.com/GabGo51/meow-twitter"
-          onMouseEnter={() => cursorChangeHandler("button")}
-          onMouseLeave={() => cursorChangeHandler("hovered")}
-        >
-          <i className="two fa-brands fa-square-github"></i>
-        </a>
-      </Project1>
+      
       <Project1
         onMouseEnter={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")}
@@ -165,6 +167,7 @@ const Feat = styled.p`
 
 const Project1 = styled.div`
   position: relative;
+  margin-top: -10px;
   .two {
     color: white;
   }
