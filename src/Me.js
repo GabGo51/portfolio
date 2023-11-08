@@ -38,7 +38,7 @@ const Me = () => {
         <img src={Moi} />
         <Text>
           I'm a developer with a passion for web design, snowboard and rock climbing. When I'm not geeking out online, you'll find me outside
-          either climbing mountains or snowboarding down them. Not afraid of working in a faced paced environement, and willing to take the time and go beyond to create complex and meaninfull websites. 
+          either climbing mountains or snowboarding down them. Not afraid of working in a fast paced environment, and willing to take the time and go beyond to create complex and meaninfull websites. 
         </Text>
         <Round></Round>
         

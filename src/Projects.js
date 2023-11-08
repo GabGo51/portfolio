@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import proj1 from "./img/proj1.png";
-import proj2 from "./img/proj2.PNG";
 import proj3 from "./img/proj3.PNG";
 import cms from "./img/CMS.png"
 import { useState, useEffect } from "react";
@@ -49,9 +48,9 @@ const Projects = () => {
         onMouseLeave={() => cursorChangeHandler("")}
       >
         <a target="#" href="https://cms-website-pi.vercel.app/">
-          <Box>
-            <GadgetGo>CMS</GadgetGo>
-          </Box>
+         
+            <h3 className="title1">CMS</h3>
+          
 
           <Proj2 src={cms} />
         </a>
@@ -88,9 +87,9 @@ const Projects = () => {
         onMouseLeave={() => cursorChangeHandler("")}
       >
         <a target="#" href="https://gadgetgo.vercel.app/">
-          <Box>
+          
             <Social>GADGETGO</Social>
-          </Box>
+          
 
           <Proj2 src={proj3} />
         </a>
@@ -171,6 +170,15 @@ const Project1 = styled.div`
   .two {
     color: white;
   }
+  .title1{
+    position: absolute;
+  color: white;
+  font-weight: 200;
+  left: 5vw;
+  font-size: 5.2vw;
+  border-bottom: 3px solid white;
+  transform: translateY(10%);
+  }
 `;
 
 const Proj1 = styled.img`
@@ -188,18 +196,9 @@ const Bloom = styled.p`
   font-size: 5.2vw;
   border-bottom: 0.5vw solid black;
 `;
-const Box = styled.div`
-  background-color: rgba(248, 248, 248, 1);
-`;
 
-const GadgetGo = styled.p`
-  position: absolute;
-  color: white;
-  left: 5vw;
-  font-size: 5.2vw;
-  border-bottom: 0.5vw solid white;
-  transform: translateY(10%);
-`;
+
+
 
 const Social = styled.p`
   position: absolute;
