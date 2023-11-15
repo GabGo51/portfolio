@@ -98,12 +98,12 @@ const Header2 = () => {
   const imageAnimation1 = useTransform(
     scrollYProgress,
     [0, 1],
-    ["10vw", "700px"]
+    ["10px", "700px"]
   );
   const imageAnimation2 = useTransform(
     scrollYProgress,
     [0, 1],
-    ["100vw", "600px"]
+    ["195px", "600px"]
   );
   const imageAnimation3 = useTransform(
     scrollYProgress,
