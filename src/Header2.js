@@ -93,7 +93,7 @@ const Header2 = () => {
   }, []);
 
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
+  const { scrollYProgress } = useScroll();
 
   const imageAnimation1 = useTransform(
     scrollYProgress,
@@ -128,7 +128,7 @@ const Header2 = () => {
   const textSpring4 = useSpring(textAnimation4 ,{stiffness:50, damping:30})
 
   return (
-    <Container ref={ref}>
+    <Container >
       <div>
         <motion.img
           style={{
@@ -242,7 +242,7 @@ const Container = styled.header`
   }
 
   @media screen and (max-width: 600px) {
-    padding-bottom: 500px;
+    height: 600px;
   }
 `;
 
