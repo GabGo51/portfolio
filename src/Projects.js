@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import proj1 from "./img/proj1.png";
-import proj3 from "./img/proj3.PNG";
-import cms from "./img/CMS.png"
+import proj1 from "./img/proj1.webp";
+import proj3 from "./img/proj3.webp";
+import cms from "./img/CMS.webp"
 import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { MouseContext } from "./context/mouseContext";

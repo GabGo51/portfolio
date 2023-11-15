@@ -6,6 +6,8 @@ import Projects from "./Projects";
 import Nav from "./Nav"
 import Cursor from "./Cursor";
 import Contact from "./Contact";
+import Header2 from "./Header2";
+
 
 
 function App() {
@@ -14,7 +16,8 @@ function App() {
   <Box>
     <Cursor/>
     <Nav/>
-    <Header/>
+    <Header2/>
+    {/* <Header/> */}
     <About/>
     <Me/>
     <Projects/>

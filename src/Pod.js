@@ -1,6 +1,6 @@
 import  styled  from "styled-components";
 import { useEffect, useState, useRef } from "react";
-import Gab from "./img/gab.png"
+import Gab from "./img/gab.webp"
 
 const Pod = () => {
   const podRef = useRef(null);

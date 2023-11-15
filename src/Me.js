@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import Marquee from "react-fast-marquee";
-import Moi from "./img/boutme.jpg";
+import Moi from "./img/boutme.webp";
 import { useContext } from "react";
 import { MouseContext } from "./context/mouseContext";
 

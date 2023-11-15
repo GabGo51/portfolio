@@ -2,24 +2,24 @@ import React from "react";
 import { styled } from "styled-components";
 
 //shitty way of importing xd
-import Image1 from "./img/yeur.PNG";
-import Image3 from "./img/bout.jpg";
-import Image4 from "./img/gadgetgo.png";
-import Image5 from "./img/luigi.PNG";
-import Image6 from "./img/twitter.PNG";
-import Image7 from "./img/bloom1.PNG";
-import Image8 from "./img/bloom2.PNG";
-import Image9 from "./img/board.PNG";
-import Image10 from "./img/board2.PNG";
-import Image11 from "./img/board4.PNG";
-import Image12 from "./img/climb1.PNG";
-import Image13 from "./img/climb5.PNG";
-import Image14 from "./img/climb6.PNG";
-import Image15 from "./img/anime.PNG";
-import Image16 from "./img/climbb.PNG";
-import Image17 from "./img/climbbb.PNG";
-import Image18 from "./img/dimple.PNG";
-import Image19 from "./img/sanji.PNG";
+import Image1 from "./img/yeur.webp";
+import Image3 from "./img/bout.webp";
+import Image4 from "./img/gadgetgo.webp";
+import Image5 from "./img/luigi.webp";
+import Image6 from "./img/twitter.webp";
+import Image7 from "./img/bloom1.webp";
+import Image8 from "./img/bloom2.webp";
+import Image9 from "./img/board.webp";
+import Image10 from "./img/board2.webp";
+import Image11 from "./img/board4.webp";
+import Image12 from "./img/climb1.webp";
+import Image13 from "./img/climb5.webp";
+import Image14 from "./img/climb6.webp";
+import Image15 from "./img/anime.webp";
+import Image16 from "./img/climbb.webp";
+import Image17 from "./img/climbbb.webp";
+import Image18 from "./img/dimple.webp";
+import Image19 from "./img/sanji.webp";
 
 import { useState, useEffect } from "react";
 //This compo has the main text and img
