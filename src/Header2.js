@@ -98,30 +98,30 @@ const Header2 = () => {
   const imageAnimation1 = useTransform(
     scrollYProgress,
     [0, 1],
-    ["15px", "500px"]
+    ["10vw", "700px"]
   );
   const imageAnimation2 = useTransform(
     scrollYProgress,
     [0, 1],
-    ["195px", "400px"]
+    ["100vw", "600px"]
   );
   const imageAnimation3 = useTransform(
     scrollYProgress,
     [0, 1],
-    ["385px", "800px"]
+    ["385px", "1000px"]
   );
   const imageAnimation4 = useTransform(
     scrollYProgress,
     [0, 1],
-    ["560px", "800px"]
+    ["560px", "1000px"]
   );
 
   
 
-  const textAnimation1 = useTransform(scrollYProgress, [0, 1], [0, 1500]);
-  const textAnimation2 = useTransform(scrollYProgress, [0, 1], [0, -1200]);
-  const textAnimation3 = useTransform(scrollYProgress, [0, 1], [0, 1700]);
-  const textAnimation4 = useTransform(scrollYProgress, [0, 1], [0, -1000]);
+  const textAnimation1 = useTransform(scrollYProgress, [0, 1], [0, 3500]);
+  const textAnimation2 = useTransform(scrollYProgress, [0, 1], [0, -3200]);
+  const textAnimation3 = useTransform(scrollYProgress, [0, 1], [0, 3700]);
+  const textAnimation4 = useTransform(scrollYProgress, [0, 1], [0, -3000]);
   const textSpring1 = useSpring(textAnimation1 ,{stiffness:50, damping:30})
   const textSpring2 = useSpring(textAnimation2 ,{stiffness:50, damping:30})
   const textSpring3 = useSpring(textAnimation3 ,{stiffness:50, damping:30})
@@ -242,7 +242,7 @@ const Container = styled.header`
   }
 
   @media screen and (max-width: 600px) {
-    height: 600px;
+    height: 450px;
   }
 `;
 
