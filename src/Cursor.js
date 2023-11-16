@@ -19,10 +19,10 @@ const Cursor = () => {
         
       ></Ring>
             
-      <Dot
+      {/* <Dot
         className={cursorType === 'hovered' || 'button' ? cursorType : ''}
         style={{ left: `${x}px`, top: `${y}px` }}
-      ></Dot>
+      ></Dot> */}
     </Container>
   );
 };
@@ -30,6 +30,7 @@ const Cursor = () => {
 const Container = styled.div`
 mix-blend-mode: difference;
 z-index: 999;
+transition: 500ms;
 
 `
 
@@ -42,19 +43,13 @@ const Ring = styled.div`
   border: 2px solid white;
   border-radius: 100%;
   transform: translate(-50%, -50%);
-  -webkit-transition-duration: 100ms;
-  transition-duration: 100ms;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  will-change: width, height, transform, border;
   pointer-events: none;
+  transition: width 200ms, height 200ms;
   
 
   &.hovered{
     width: 60px;
     height: 60px;
-    
-    
     border-width: 3px;
   }
 
