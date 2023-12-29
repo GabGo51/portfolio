@@ -123,7 +123,7 @@ const Contact = () => {
         onMouseEnter={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")}
       >
-        <i class="fa-solid fa-arrow-up"></i>
+        <i className="fa-solid fa-arrow-up"></i>
       </Top>
       <Footer>
         <p>Gabriel Gosselin</p>

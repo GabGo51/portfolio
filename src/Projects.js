@@ -6,7 +6,8 @@ import cms from "./img/CMS.webp"
 import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { MouseContext } from "./context/mouseContext";
-
+import vid from './img/gogossevid.webm'
+import vid2 from './img/weFinanceU.webm'
 const Projects = () => {
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
   const [showTitle, setShowTitle] = useState(false);
@@ -47,7 +48,43 @@ const Projects = () => {
         onMouseEnter={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")}
       >
-        <a target="#" href="https://cms-website-pi.vercel.app/">
+        <a target="#" href="https://gogosse.vercel.app">
+          
+
+          <Proj4 controls autoplay  src={vid} />
+        </a>
+        <a
+          target="#"
+          href="https://github.com/GabGo51/gogosse"
+          onMouseEnter={() => cursorChangeHandler("button")}
+          onMouseLeave={() => cursorChangeHandler("hovered")}
+        >
+          <i className="one fa-brands fa-square-github"></i>
+        </a>
+      </Project1>
+      <Project1
+        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseLeave={() => cursorChangeHandler("")}
+      >
+        <a target="#" href="https://wefinanceu.vercel.app">
+          
+
+          <Proj4 controls autoplay  src={vid2} />
+        </a>
+        <a
+          target="#"
+          href="https://github.com/GabGo51/wefinanceu"
+          onMouseEnter={() => cursorChangeHandler("button")}
+          onMouseLeave={() => cursorChangeHandler("hovered")}
+        >
+          <i className="one fa-brands fa-square-github"></i>
+        </a>
+      </Project1>
+      <Project1
+        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseLeave={() => cursorChangeHandler("")}
+      >
+        <a target="#" href="https://medecinesportivelaurentides.com">
          
             <h3 className="title1">CMS</h3>
           
@@ -63,45 +100,9 @@ const Projects = () => {
           <i className="two fa-brands fa-square-github"></i>
         </a>
       </Project1>
-      <Project1
-        onMouseEnter={() => cursorChangeHandler("hovered")}
-        onMouseLeave={() => cursorChangeHandler("")}
-      >
-        <a target="#" href="https://plant-care-app.vercel.app/">
-          <Bloom>BLOOM</Bloom>
-
-          <Proj1 src={proj1} />
-        </a>
-        <a
-          target="#"
-          href="https://github.com/GabGo51/plant-care-app"
-          onMouseEnter={() => cursorChangeHandler("button")}
-          onMouseLeave={() => cursorChangeHandler("hovered")}
-        >
-          <i className="one fa-brands fa-square-github"></i>
-        </a>
-      </Project1>
       
-      <Project1
-        onMouseEnter={() => cursorChangeHandler("hovered")}
-        onMouseLeave={() => cursorChangeHandler("")}
-      >
-        <a target="#" href="https://gadgetgo.vercel.app/">
-          
-            <Social>GADGETGO</Social>
-          
-
-          <Proj2 src={proj3} />
-        </a>
-        <a
-          target="#"
-          href="https://github.com/jasmineplqn/E-commerce-Website"
-          onMouseEnter={() => cursorChangeHandler("button")}
-          onMouseLeave={() => cursorChangeHandler("hovered")}
-        >
-          <i className="three fa-brands fa-square-github"></i>
-        </a>
-      </Project1>
+      
+      
     </Container>
   );
 };
@@ -121,7 +122,7 @@ const Container = styled.div`
   justify-content: center;
   i {
     position: absolute;
-    top: 1vw;
+    top:100px;
     left: 2vw;
     scale: 2;
     color: black;
@@ -185,6 +186,10 @@ const Proj1 = styled.img`
   width: 100vw;
 `;
 const Proj2 = styled.img`
+  margin-top: -10px;
+  width: 100vw;
+`;
+const Proj4 = styled.video`
   margin-top: -10px;
   width: 100vw;
 `;
