@@ -6,9 +6,9 @@ import cms from "./img/CMS.webp"
 import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { MouseContext } from "./context/mouseContext";
-import vid from './img/gogossevid.webm'
-import vid2 from './img/weFinanceU.webm'
-import vid3 from './img/vid3.webm'
+import vid from './img/gogossevid.mp4'
+import vid2 from './img/weFinanceU.mp4'
+import vid3 from './img/vid3.mp4'
 
 const Projects = () => {
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
