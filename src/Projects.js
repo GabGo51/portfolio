@@ -8,6 +8,8 @@ import { useContext } from "react";
 import { MouseContext } from "./context/mouseContext";
 import vid from './img/gogossevid.webm'
 import vid2 from './img/weFinanceU.webm'
+import vid3 from './img/vid3.webm'
+
 const Projects = () => {
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
   const [showTitle, setShowTitle] = useState(false);
@@ -78,6 +80,26 @@ const Projects = () => {
           onMouseLeave={() => cursorChangeHandler("hovered")}
         >
           <i className="one fa-brands fa-square-github"></i>
+        </a>
+      </Project1>
+      <Project1
+        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseLeave={() => cursorChangeHandler("")}
+      >
+        <a target="#" href="alexandranicolov.com">
+         
+            
+          
+
+        <Proj4 controls autoplay  src={vid3} />
+        </a>
+        <a
+          target="#"
+          href="https://github.com/GabGo51/alexandranicolov"
+          onMouseEnter={() => cursorChangeHandler("button")}
+          onMouseLeave={() => cursorChangeHandler("hovered")}
+        >
+          <i className="alexe fa-brands fa-square-github"></i>
         </a>
       </Project1>
       <Project1
@@ -182,9 +204,7 @@ const Project1 = styled.div`
   }
 `;
 
-const Proj1 = styled.img`
-  width: 100vw;
-`;
+
 const Proj2 = styled.img`
   margin-top: -10px;
   width: 100vw;
@@ -192,27 +212,17 @@ const Proj2 = styled.img`
 const Proj4 = styled.video`
   margin-top: -10px;
   width: 100vw;
-`;
 
-const Bloom = styled.p`
-  position: absolute;
-  color: black;
-  right: 5vw;
-  font-size: 5.2vw;
-  border-bottom: 0.5vw solid black;
+  .alex{
+    color: black;
+  }
 `;
 
 
 
 
-const Social = styled.p`
-  position: absolute;
-  color: black;
-  left: 5vw;
-  top: -1.5vw;
-  font-size: 5.2vw;
-  border-bottom: 0.5vw solid black;
-  transform: translateY(20%);
-`;
+
+
+
 
 export default Projects;
