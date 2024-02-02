@@ -104,14 +104,14 @@ const CustomMarquee = styled(Marquee)`
     align-items: center;
   }
   &:hover {
-    cursor: pointer;
+    
     p {
       transform: rotate(-0.5deg);
     }
     span {
       transform: rotate(90deg);
     }
-    opacity: 0.64;
+    
   }
 `;
 const Text = styled.h4`

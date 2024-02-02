@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import alexe from './img/alexe.jpg'
-import gogosse from './img/gogosse.gif'
-import cms from "./img/CMS.webp"
 import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { MouseContext } from "./context/mouseContext";
-import wfu from './img/wfu.PNG'
+import test from "./img/gogoseimg.png";
+import cms from "./img/CMS.webp";
+import alexe from "./img/alexe.PNG";
+import wfu from "./img/wfu.PNG";
 
 const Projects = () => {
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
@@ -41,92 +41,64 @@ const Projects = () => {
   return (
     <Container>
       <Title>
-        <Proj className={`title2 ${showTitle ? "show" : ""}`}>PROJECTS &</Proj>
-        <Feat className={`title2 ${showTitle ? "show" : ""}`}>FEATURED WORKS</Feat>
+        <p className={`title2 ${showTitle ? "proj show" : " project"}`}>
+          PROJECTS &
+        </p>
+        <p className={`title2 ${showTitle ? "featured show" : "featured"}`}>
+          FEATURED WORKS
+        </p>
       </Title>
-      <Project1
-        onMouseEnter={() => cursorChangeHandler("hovered")}
-        onMouseLeave={() => cursorChangeHandler("")}
-      >
-        <h2 className="gogosse"> GOGOSSE</h2>
-        <a target="#" href="https://gogosse.vercel.app">
+      <ProjectsBox>
+        <div className="project">
+          <p>GOGOSSE</p>
+          <p className="subtitle">GRAPHIC DESIGN PORTFOLIO</p>
+          <a target="#" href="https://gogosse.vercel.app">
+            <div
+              onMouseEnter={() => cursorChangeHandler("hovered")}
+              onMouseLeave={() => cursorChangeHandler("")}
+            >
+              <img src={test} />
+            </div>
+          </a>
+        </div>
+        <div className="project">
+          <p>ALEXANDRA NICOLOV</p>
+          <p className="subtitle">PHOTOGRAPHY PORTFOLIO</p>
+          <a target="#" href="https://www.alexandranicolov.com">
+            <div
+              onMouseEnter={() => cursorChangeHandler("hovered")}
+              onMouseLeave={() => cursorChangeHandler("")}
+            >
+              <img src={alexe} />
+            </div>
+          </a>
+        </div>
+        <div className="project">
+          <p>WEFINANCEU</p>
+          <p className="subtitle">FINANCE</p>
+          <a target="#" href="https://wefinanceu.vercel.app">
+            <div
+              onMouseEnter={() => cursorChangeHandler("hovered")}
+              onMouseLeave={() => cursorChangeHandler("")}
+            >
+              <img src={wfu} />
+            </div>
+          </a>
+        </div>
+        <div className="project">
+          <p>CMS LAURENTIDE</p>
+          <p className="subtitle">HEALT CARE</p>
+          <a target="#" href="https://medecinesportivelaurentides.com" >
+            <div
+            onMouseEnter={() => cursorChangeHandler("hovered")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
+            <img src={cms} />
+          </div>
+          </a>
           
-
-          <Proj4 controls autoplay  src={gogosse} />
-        </a>
-        <a
-          target="#"
-          href="https://github.com/GabGo51/gogosse"
-          onMouseEnter={() => cursorChangeHandler("button")}
-          onMouseLeave={() => cursorChangeHandler("hovered")}
-        >
-          <i className="one fa-brands fa-square-github"></i>
-        </a>
-      </Project1>
-      <Project1
-        onMouseEnter={() => cursorChangeHandler("hovered")}
-        onMouseLeave={() => cursorChangeHandler("")}
-      >
-        <a target="#" href="https://wefinanceu.vercel.app">
-          
-
-          <Proj4 controls autoplay  src={alexe} />
-        </a>
-
-        <h2 className="alex"> ALEXANDRA NICOLOV</h2>
-        <a
-          target="#"
-          href="https://github.com/GabGo51/wefinanceu"
-          onMouseEnter={() => cursorChangeHandler("button")}
-          onMouseLeave={() => cursorChangeHandler("hovered")}
-        >
-          <i className="one fa-brands fa-square-github"></i>
-        </a>
-      </Project1>
-      <Project1
-        onMouseEnter={() => cursorChangeHandler("hovered")}
-        onMouseLeave={() => cursorChangeHandler("")}
-      >
-        <a target="#" href="alexandranicolov.com">
-         
-            
-          
-
-        <Proj4 controls autoplay  src={wfu} />
-        </a>
-        <h2 className="we"> WeFinanceU</h2>
-        <a
-          target="#"
-          href="https://github.com/GabGo51/alexandranicolov"
-          onMouseEnter={() => cursorChangeHandler("button")}
-          onMouseLeave={() => cursorChangeHandler("hovered")}
-        >
-          <i className="alexe fa-brands fa-square-github"></i>
-        </a>
-      </Project1>
-      <Project1
-        onMouseEnter={() => cursorChangeHandler("hovered")}
-        onMouseLeave={() => cursorChangeHandler("")}
-      >
-        <a target="#" href="https://medecinesportivelaurentides.com">
-         
-        <h2 className="cms"> CMS</h2>
-          
-
-          <Proj2 src={cms} />
-        </a>
-        <a
-          target="#"
-          href="https://github.com/GabGo51/cms-website"
-          onMouseEnter={() => cursorChangeHandler("button")}
-          onMouseLeave={() => cursorChangeHandler("hovered")}
-        >
-          <i className="two fa-brands fa-square-github"></i>
-        </a>
-      </Project1>
-      
-      
-      
+        </div>
+      </ProjectsBox>
     </Container>
   );
 };
@@ -144,54 +116,10 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  i {
-    position: absolute;
-    top:30px;
-    left: 30px;
-    scale: 2;
-    color: black;
-    @media screen and (max-width: 1200px) {
-      display: none;
-    }
-  }
 
-  h2{
-    z-index: 999;
-    position: absolute;
-    left: 50%;
-    top:50%;
-    transform: translate(-50%, -120%);
-    font-size: clamp(30px,8vw , 150px);
-    color: grey;
-    
-    text-align: center;
-    ;
-    
-  }
-
-  .gogosse{
-    color: #b1f3a9;
-    text-shadow: -1px 4px 11px rgba(118, 128, 125, 1);
-  }
-
-  .alex{
-    color: white ;
-  }
-
-  .we{
-    color: black;
-    
-  }
-
-  .cms{
-    color: #c7d324;
-    
-  }
-
-  
   @media screen and (max-width: 500px) {
-      padding-top: 25vw;
-    }
+    padding-top: 25vw;
+  }
 `;
 
 const Title = styled.div`
@@ -199,70 +127,85 @@ const Title = styled.div`
   line-height: 6.5vw;
   margin-bottom: 8vw;
   @media screen and (max-width: 600px) {
-    line-height:35px
+    line-height: 35px;
   }
-`;
-const Proj = styled.p`
-  font-family: Canter;
-  font-style: italic;
-  font-size: 9.1vw;
-  opacity: 0;
-  transition: 1.2s;
-  transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
-  &.show {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) rotateX(0deg);
-  }
-`;
-const Feat = styled.p`
-  opacity: 0;
-  transition: 1.2s;
-  transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
-  &.show {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) rotateX(0deg);
-  }
-`;
 
-const Project1 = styled.div`
-mix-blend-mode: difference;
-  position: relative;
-  margin-top: -10px;
-  .two {
-    color: white;
+  .proj {
+    font-family: Canter;
+    font-style: italic;
+    font-size: 9.1vw;
+    opacity: 0;
+    transition: 1.2s;
+    transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
+    &.show {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) rotateX(0deg);
+    }
   }
-  .title1{
-    position: absolute;
-  color: white;
-  font-weight: 200;
-  left: 5vw;
-  font-size: 5.2vw;
-  border-bottom: 3px solid white;
-  transform: translateY(10%);
+
+  .featured {
+    opacity: 0;
+    transition: 1.2s;
+    transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
+    &.show {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) rotateX(0deg);
+    }
   }
 `;
 
+const ProjectsBox = styled.div`
+  display: flex;
+  align-items: end;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  .project {
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
 
-const Proj2 = styled.img`
-  
-  width: 100vw;
-`;
-const Proj4 = styled.img`
-  margin-top: 0px;
-  width: 100vw;
-  height: 60vw;
-  object-fit: cover;
+    p {
+      font-size: clamp(10px, 5vw, 60px);
+      text-align: center;
+      font-family: Canter;
+      font-style: italic;
+    }
 
-  .alex{
-    color: black;
+    .subtitle {
+      font-size: clamp(10px, 2vw, 24px);
+      font-family: PasCanter;
+      font-style: normal;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    div {
+      width: 100%;
+      
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    img {
+      transition: 1s;
+      width: 100%;
+      
+
+      &:hover {
+        scale: 1.1;
+      }
+    }
+
+    a{
+      width: 100%;
+    }
   }
 `;
-
-
-
-
-
-
-
 
 export default Projects;
