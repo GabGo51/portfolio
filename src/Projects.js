@@ -162,6 +162,7 @@ const ProjectsBox = styled.div`
   width: 100%;
   .project {
     width: 47%;
+    height: 35vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -185,7 +186,6 @@ const ProjectsBox = styled.div`
 
     div {
       width: 100%;
-      
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -195,7 +195,7 @@ const ProjectsBox = styled.div`
     img {
       transition: 1s;
       width: 100%;
-      
+      height: 25vw;
 
       &:hover {
         scale: 1.1;
