@@ -7,20 +7,23 @@ import { MouseContext } from "./context/mouseContext";
 
 const Me = () => {
   const { cursorChangeHandler } = useContext(MouseContext);
-  const screeWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  let speed = 90
-  if (screeWidth < 500){
-    speed = 35
+  const screeWidth =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+  let speed = 90;
+  if (screeWidth < 500) {
+    speed = 35;
   }
-  
+
   return (
     <>
       <Container>
         <Box
-          // target="#"
-          // href="https://www.instagram.com/gab_go_fast___/"
-          // onMouseEnter={() => cursorChangeHandler("hovered")}
-          // onMouseLeave={() => cursorChangeHandler("")}
+        // target="#"
+        // href="https://www.instagram.com/gab_go_fast___/"
+        // onMouseEnter={() => cursorChangeHandler("hovered")}
+        // onMouseLeave={() => cursorChangeHandler("")}
         >
           <p className="intro">ABOUT ME</p>
           <CustomMarquee speed={speed}>
@@ -32,16 +35,17 @@ const Me = () => {
             <span>-</span>
             <p>OPTIMIZE</p>
             <span>-</span>
-            
           </CustomMarquee>
         </Box>
         <img src={Moi} />
         <Text>
-          I'm a developer with a passion for web design, snowboard and rock climbing. When I'm not geeking out online, you'll find me outside
-          either climbing mountains or snowboarding down them. Not afraid of working in a fast paced environment, and willing to take the time and go beyond to create complex and meaninfull websites. 
+          I'm a developer with a passion for web design, snowboard and rock
+          climbing. When I'm not geeking out online, you'll find me outside
+          either climbing mountains or snowboarding down them. Not afraid of
+          working in a fast paced environment, and willing to take the time and
+          go beyond to create complex and meaninfull websites.
         </Text>
         <Round></Round>
-        
       </Container>
     </>
   );
@@ -79,16 +83,16 @@ const Container = styled.div`
 `;
 
 const Box = styled.a`
-color: black;
-text-decoration: none;
+  color: black;
+  text-decoration: none;
 
-.intro{
-  text-align: center;
-  font-size: 6vw;
-  margin-bottom: 40px;
-  font-family: Canter;
-  
-}
+  .intro {
+    text-align: center;
+    font-size: 6vw;
+    margin-bottom: 40px;
+    font-family: Canter;
+    font-style: italic;
+  }
 `;
 const CustomMarquee = styled(Marquee)`
   display: flex;
@@ -104,14 +108,12 @@ const CustomMarquee = styled(Marquee)`
     align-items: center;
   }
   &:hover {
-    
     p {
       transform: rotate(-0.5deg);
     }
     span {
       transform: rotate(90deg);
     }
-    
   }
 `;
 const Text = styled.h4`
@@ -132,14 +134,16 @@ const Text = styled.h4`
 `;
 
 const MusicBox = styled.div`
-position: absolute;
-bottom: 5vw;
-`
+  position: absolute;
+  bottom: 5vw;
+`;
 const Spotify = styled.img`
-border-radius: 30px;
-scale: 0.6;
-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-`
+  border-radius: 30px;
+  scale: 0.6;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+`;
 const Round = styled.div`
   width: 100vw;
   height: 100px;

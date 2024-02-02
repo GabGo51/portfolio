@@ -133,7 +133,7 @@ const Title = styled.div`
 
   .proj {
     font-family: Canter;
-    
+    font-style: italic;
     font-size: 9.1vw;
     opacity: 0;
     transition: 1.2s;
@@ -173,17 +173,20 @@ const ProjectsBox = styled.div`
     p {
       font-size: clamp(10px, 5vw, 60px);
       text-align: center;
-      font-family: PasCanter;
       
+      font-family: Canter;
+      font-style: italic;
     }
 
     .subtitle {
       font-size: clamp(10px, 2vw, 24px);
       
-      font-family: Canter;
+      
       
       font-weight: 300;
       margin-bottom: 20px;
+      font-style: normal;
+      font-family: PasCanter;
     }
 
     div {

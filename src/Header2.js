@@ -238,6 +238,7 @@ const Container = styled.header`
   p {
     mix-blend-mode: difference;
     text-transform: uppercase;
+    
     font-size: 11vw;
     opacity: 0;
     transition: 1.2s;
@@ -255,6 +256,7 @@ const Container = styled.header`
 
     p {
       font-family: Canter;
+      font-style: italic;
     }
   }
   .lastname {
@@ -263,6 +265,7 @@ const Container = styled.header`
     font-size: 11.5vw;
     p {
       font-family: Canter;
+      font-style: italic;
     }
   }
   .web {

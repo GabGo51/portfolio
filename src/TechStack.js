@@ -27,6 +27,7 @@ margin-bottom: 10vw;
 p{
   transform: translateX(160%);
   margin-bottom: 10vw;
+  
 }
 
 @media screen and (max-width: 600px) {
@@ -52,6 +53,7 @@ margin-bottom: 5vw;
 const Title = styled.h3`
 font-size: 6vw;
 font-family: Canter;
+font-style: italic;
 margin-top: 10vw;
 
 font-weight: 500;
