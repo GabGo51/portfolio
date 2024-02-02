@@ -180,7 +180,7 @@ const Container = styled.div`
 
   .we{
     color: black;
-    text-shadow: -1px 4px 11px rgba(118, 128, 125, 1);
+    
   }
 
   .cms{
