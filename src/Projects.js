@@ -94,7 +94,7 @@ const Projects = () => {
 
         <Proj4 controls autoplay  src={wfu} />
         </a>
-        <h2> WeFinanceU</h2>
+        <h2 className="we"> WeFinanceU</h2>
         <a
           target="#"
           href="https://github.com/GabGo51/alexandranicolov"
@@ -110,7 +110,7 @@ const Projects = () => {
       >
         <a target="#" href="https://medecinesportivelaurentides.com">
          
-        <h2> CMS</h2>
+        <h2 className="cms"> CMS</h2>
           
 
           <Proj2 src={cms} />
@@ -160,7 +160,7 @@ const Container = styled.div`
     position: absolute;
     left: 50%;
     top:50%;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -120%);
     font-size: clamp(30px,8vw , 150px);
     color: grey;
     
@@ -175,6 +175,14 @@ const Container = styled.div`
 
   .alex{
     color: white ;
+  }
+
+  .we{
+    color: black;
+  }
+
+  .cms{
+    color: #c7d324;
   }
 
   
