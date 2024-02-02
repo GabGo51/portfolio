@@ -87,7 +87,7 @@ text-decoration: none;
   font-size: 6vw;
   margin-bottom: 40px;
   font-family: Canter;
-  font-style: italic;
+  
 }
 `;
 const CustomMarquee = styled(Marquee)`

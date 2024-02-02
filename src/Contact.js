@@ -168,7 +168,7 @@ const Box = styled.div`
 const Title = styled.h3`
   font-family: Canter;
   font-size: 10vw;
-  font-style: italic;
+  
   font-weight: 200;
 `;
 const Title2 = styled.h3`

@@ -53,7 +53,7 @@ const Title = styled.h3`
 font-size: 6vw;
 font-family: Canter;
 margin-top: 10vw;
-font-style: italic;
+
 font-weight: 500;
 opacity: 0;
 transition: 1s;

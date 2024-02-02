@@ -92,7 +92,6 @@ const Header2 = () => {
     };
   }, []);
 
-  const ref = useRef(null);
   const { scrollYProgress } = useScroll();
 
   const imageAnimation1 = useTransform(
@@ -116,28 +115,33 @@ const Header2 = () => {
     ["560px", "1000px"]
   );
 
-  
-
   const textAnimation1 = useTransform(scrollYProgress, [0, 1], [0, 3500]);
   const textAnimation2 = useTransform(scrollYProgress, [0, 1], [0, -3200]);
   const textAnimation3 = useTransform(scrollYProgress, [0, 1], [0, 3700]);
   const textAnimation4 = useTransform(scrollYProgress, [0, 1], [0, -3000]);
-  const textSpring1 = useSpring(textAnimation1 ,{stiffness:50, damping:30})
-  const textSpring2 = useSpring(textAnimation2 ,{stiffness:50, damping:30})
-  const textSpring3 = useSpring(textAnimation3 ,{stiffness:50, damping:30})
-  const textSpring4 = useSpring(textAnimation4 ,{stiffness:50, damping:30})
+  const textSpring1 = useSpring(textAnimation1, { stiffness: 50, damping: 30 });
+  const textSpring2 = useSpring(textAnimation2, { stiffness: 50, damping: 30 });
+  const textSpring3 = useSpring(textAnimation3, { stiffness: 50, damping: 30 });
+  const textSpring4 = useSpring(textAnimation4, { stiffness: 50, damping: 30 });
 
   return (
-    <Container >
-      <div>
+    <Container>
+      <div className="box">
         <motion.img
+          initial={{ scaleY: 0, width: 0 }}
+          animate={{ scaleY: 1, width: "15vw" }}
+          transition={{ duration: 1, delay:0.5 }}
           style={{
             left: "14vw",
             top: imageAnimation1,
           }}
           src={bubble1Src}
         />
+
         <motion.img
+          initial={{ scaleY: 0, width: 0 }}
+          animate={{ scaleY: 1, width: "15vw" }}
+          transition={{ duration: 1, delay:0.5 }}
           style={{
             right: "22vw",
             top: imageAnimation2,
@@ -145,6 +149,9 @@ const Header2 = () => {
           src={bubble2Src}
         />
         <motion.img
+          initial={{ scaleY: 0, width: 0 }}
+          animate={{ scaleY: 1, width: "15vw" }}
+          transition={{ duration: 1, delay:0.5 }}
           style={{
             left: "23vw",
             top: imageAnimation3,
@@ -152,46 +159,52 @@ const Header2 = () => {
           src={bubble3Src}
         />
         <motion.img
+          initial={{ scaleY: 0, width: 0 }}
+          animate={{ scaleY: 1, width: "15vw" }}
+          transition={{ duration: 1, delay:0.5 }}
           style={{
             right: "10vw",
             top: imageAnimation4,
           }}
           src={bubble4Src}
         />
-
-        <motion.p
+        <motion.div
           style={{
             translateX: textSpring1,
           }}
           className="name"
         >
-          Gabriel
-        </motion.p>
-
-        <motion.p
+          <motion.p className={`${showTitle ? " show" : ""}`}>Gabriel</motion.p>
+        </motion.div>
+        <motion.div
+          className="lastname"
           style={{
             translateX: textSpring2,
           }}
-          className="lastname"
         >
-          Gosselin
-        </motion.p>
-        <motion.p
+          <motion.p className={` ${showTitle ? " show" : ""}`}>
+            Gosselin
+          </motion.p>
+        </motion.div>
+
+        <motion.div
           style={{
             translateX: textSpring3,
           }}
           className="web"
         >
-          Web
-        </motion.p>
-        <motion.p
+          <motion.p className={` ${showTitle ? " show" : ""}`}>Web</motion.p>
+        </motion.div>
+        <motion.div
           style={{
             translateX: textSpring4,
           }}
           className="dev"
         >
-          DEVELOPER
-        </motion.p>
+          <motion.p className={` ${showTitle ? " show" : ""}`}>
+            DEVELOPER
+          </motion.p>
+        </motion.div>
       </div>
     </Container>
   );
@@ -205,7 +218,7 @@ const Container = styled.header`
   width: 100vw;
   line-height: 9.5vw;
 
-  div {
+  .box {
     position: fixed;
     mix-blend-mode: difference;
     z-index: 2;
@@ -217,21 +230,40 @@ const Container = styled.header`
     background-color: white;
     object-fit: cover;
     background-position: top;
-    width: 15vw;
+
     height: 8vw;
+    transform-origin: bottom;
   }
 
   p {
     mix-blend-mode: difference;
     text-transform: uppercase;
     font-size: 11vw;
+    opacity: 0;
+    transition: 1.2s;
+    transform: translate3d(-15px, -15px, 100px) rotateX(90deg);
+    &.show {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) rotateX(0deg);
+    }
   }
 
   .name {
     margin-left: 30vw;
+
+    font-size: 11.5vw;
+
+    p {
+      font-family: Canter;
+    }
   }
   .lastname {
     margin-left: 10vw;
+
+    font-size: 11.5vw;
+    p {
+      font-family: Canter;
+    }
   }
   .web {
     margin-left: 40vw;
