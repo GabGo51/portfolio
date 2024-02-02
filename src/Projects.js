@@ -1,14 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import proj1 from "./img/proj1.webp";
-import proj3 from "./img/proj3.webp";
+import alexe from './img/alexe.jpg'
+import gogosse from './img/gogosse.gif'
 import cms from "./img/CMS.webp"
 import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { MouseContext } from "./context/mouseContext";
-import vid from './img/gogossevid.mp4'
-import vid2 from './img/weFinanceU.mp4'
-import vid3 from './img/vid3.mp4'
+import wfu from './img/wfu.PNG'
 
 const Projects = () => {
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
@@ -50,10 +48,11 @@ const Projects = () => {
         onMouseEnter={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")}
       >
+        <h2 className="gogosse"> GOGOSSE</h2>
         <a target="#" href="https://gogosse.vercel.app">
           
 
-          <Proj4 controls autoplay  src={vid} />
+          <Proj4 controls autoplay  src={gogosse} />
         </a>
         <a
           target="#"
@@ -71,8 +70,10 @@ const Projects = () => {
         <a target="#" href="https://wefinanceu.vercel.app">
           
 
-          <Proj4 controls autoplay  src={vid2} />
+          <Proj4 controls autoplay  src={alexe} />
         </a>
+
+        <h2 className="alex"> ALEXANDRA NICOLOV</h2>
         <a
           target="#"
           href="https://github.com/GabGo51/wefinanceu"
@@ -91,8 +92,9 @@ const Projects = () => {
             
           
 
-        <Proj4 controls autoplay  src={vid3} />
+        <Proj4 controls autoplay  src={wfu} />
         </a>
+        <h2> WeFinanceU</h2>
         <a
           target="#"
           href="https://github.com/GabGo51/alexandranicolov"
@@ -108,7 +110,7 @@ const Projects = () => {
       >
         <a target="#" href="https://medecinesportivelaurentides.com">
          
-            <h3 className="title1">CMS</h3>
+        <h2> CMS</h2>
           
 
           <Proj2 src={cms} />
@@ -144,14 +146,38 @@ const Container = styled.div`
   justify-content: center;
   i {
     position: absolute;
-    top:100px;
-    left: 2vw;
+    top:30px;
+    left: 30px;
     scale: 2;
     color: black;
     @media screen and (max-width: 1200px) {
       display: none;
     }
   }
+
+  h2{
+    z-index: 999;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -100%);
+    font-size: clamp(30px,8vw , 150px);
+    color: grey;
+    
+    text-align: center;
+    ;
+    
+  }
+
+  .gogosse{
+    color: #b1f3a9;
+  }
+
+  .alex{
+    color: white ;
+  }
+
+  
   @media screen and (max-width: 500px) {
       padding-top: 25vw;
     }
@@ -188,6 +214,7 @@ const Feat = styled.p`
 `;
 
 const Project1 = styled.div`
+mix-blend-mode: difference;
   position: relative;
   margin-top: -10px;
   .two {
@@ -206,12 +233,14 @@ const Project1 = styled.div`
 
 
 const Proj2 = styled.img`
-  margin-top: -10px;
+  
   width: 100vw;
 `;
-const Proj4 = styled.video`
-  margin-top: -10px;
+const Proj4 = styled.img`
+  margin-top: 0px;
   width: 100vw;
+  height: 60vw;
+  object-fit: cover;
 
   .alex{
     color: black;
