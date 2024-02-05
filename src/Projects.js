@@ -10,7 +10,7 @@ import wfu from "./img/wfu.PNG";
 import { motion } from "framer-motion";
 
 const Projects = () => {
-  const {cursorChangeHandler } = useContext(MouseContext);
+  const { cursorChangeHandler } = useContext(MouseContext);
   const [showTitle, setShowTitle] = useState(false);
 
   useEffect(() => {
@@ -51,8 +51,23 @@ const Projects = () => {
       </Title>
       <ProjectsBox>
         <div className="project">
-          <motion.p initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{duration:0.5}} viewport={{once:true}}>GOGOSSE</motion.p>
-          <motion.p initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{duration:0.5, delay:0.3}} viewport={{once:true}} className="subtitle">GRAPHIC DESIGN PORTFOLIO</motion.p>
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            GOGOSSE
+          </motion.p>
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="subtitle"
+          >
+            GRAPHIC DESIGN PORTFOLIO
+          </motion.p>
           <a target="#" href="https://gogosse.vercel.app">
             <div
               onMouseEnter={() => cursorChangeHandler("hovered")}
@@ -63,8 +78,23 @@ const Projects = () => {
           </a>
         </div>
         <div className="project">
-          <motion.p initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{duration:0.5}} viewport={{once:true}}>ALEXANDRA NICOLOV</motion.p>
-          <motion.p initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{duration:0.5, delay:0.3}} viewport={{once:true}} className="subtitle">PHOTOGRAPHY PORTFOLIO</motion.p>
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            ALEXANDRA NICOLOV
+          </motion.p>
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="subtitle"
+          >
+            PHOTOGRAPHY PORTFOLIO
+          </motion.p>
           <a target="#" href="https://www.alexandranicolov.com">
             <div
               onMouseEnter={() => cursorChangeHandler("hovered")}
@@ -75,8 +105,23 @@ const Projects = () => {
           </a>
         </div>
         <div className="project">
-          <motion.p initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{duration:0.5}} viewport={{once:true}}>WEFINANCEU</motion.p>
-          <motion.p initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{duration:0.5 ,delay:0.3}} viewport={{once:true}} className="subtitle">FINANCE</motion.p>
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            WEFINANCEU
+          </motion.p>
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="subtitle"
+          >
+            FINANCE STARTUP SHOWCASE WEBSITE
+          </motion.p>
           <a target="#" href="https://wefinanceu.vercel.app">
             <div
               onMouseEnter={() => cursorChangeHandler("hovered")}
@@ -87,17 +132,31 @@ const Projects = () => {
           </a>
         </div>
         <div className="project">
-          <motion.p initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{duration:0.5}} viewport={{once:true}}>CMS LAURENTIDE</motion.p>
-          <motion.p initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{duration:0.5 ,delay:0.3}} viewport={{once:true}} className="subtitle">HEALT CARE</motion.p>
-          <a target="#" href="https://medecinesportivelaurentides.com" >
-            <div
-            onMouseEnter={() => cursorChangeHandler("hovered")}
-            onMouseLeave={() => cursorChangeHandler("")}
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
           >
-            <img alt="project" src={cms} />
-          </div>
+            CMS LAURENTIDE
+          </motion.p>
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="subtitle"
+          >
+            HEALTCARE CLINIC WEBSITE WITH BOOKING FORM
+          </motion.p>
+          <a target="#" href="https://medecinesportivelaurentides.com">
+            <div
+              onMouseEnter={() => cursorChangeHandler("hovered")}
+              onMouseLeave={() => cursorChangeHandler("")}
+            >
+              <img alt="project" src={cms} />
+            </div>
           </a>
-          
         </div>
       </ProjectsBox>
     </Container>
@@ -173,16 +232,14 @@ const ProjectsBox = styled.div`
     p {
       font-size: clamp(10px, 5vw, 60px);
       text-align: center;
-      
+
       font-family: Canter;
       font-style: italic;
     }
 
     .subtitle {
-      font-size: clamp(10px, 2vw, 24px);
-      
-      
-      
+      font-size: clamp(10px, 2vw, 20px);
+
       font-weight: 300;
       margin-bottom: 20px;
       font-style: normal;
@@ -207,7 +264,7 @@ const ProjectsBox = styled.div`
       }
     }
 
-    a{
+    a {
       width: 100%;
     }
   }
