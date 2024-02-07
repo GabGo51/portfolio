@@ -68,7 +68,7 @@ const Projects = () => {
           >
             GRAPHIC DESIGN PORTFOLIO
           </motion.p>
-          <a target="#" href="https://gogosse.vercel.app">
+          <a target="#" href="https://www.gogosse.space">
             <div
               onMouseEnter={() => cursorChangeHandler("hovered")}
               onMouseLeave={() => cursorChangeHandler("")}

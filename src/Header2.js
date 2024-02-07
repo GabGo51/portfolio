@@ -21,6 +21,11 @@ import Image16 from "./img/climbb.webp";
 import Image17 from "./img/climbbb.webp";
 import Image18 from "./img/dimple.webp";
 import Image19 from "./img/sanji.webp";
+import Image20 from "./img/wfu.PNG";
+import Image21 from "./img/CMS.webp";
+import Image22 from "./img/gogosse.png";
+import Image23 from "./img/alexe.PNG";
+import Image24 from "./img/sanji.webp";
 
 const imgs = [
   Image1,
@@ -41,6 +46,11 @@ const imgs = [
   Image17,
   Image18,
   Image19,
+  Image20,
+  Image21,
+  Image22,
+  Image23,
+  Image24,
 ];
 
 const Header2 = () => {
