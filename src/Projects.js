@@ -69,12 +69,12 @@ const Projects = () => {
             GRAPHIC DESIGN PORTFOLIO
           </motion.p>
           <a target="#" href="https://www.gogosse.space">
-            <div
+            <img
               onMouseEnter={() => cursorChangeHandler("hovered")}
               onMouseLeave={() => cursorChangeHandler("")}
-            >
-              <img alt="project" src={test} />
-            </div>
+              alt="project"
+              src={test}
+            />
           </a>
         </div>
         <div className="project">
@@ -169,7 +169,7 @@ const Container = styled.div`
   background-color: black;
   width: 100vw;
   color: white;
-  padding-bottom: 10vw;
+  padding-bottom: 200px;
   padding-top: 15vw;
   z-index: 30;
   display: flex;
@@ -221,7 +221,7 @@ const ProjectsBox = styled.div`
   flex-wrap: wrap;
   width: 100%;
   .project {
-    width: 47%;
+    width: 50%;
     height: 35vw;
     display: flex;
     flex-direction: column;
@@ -246,26 +246,29 @@ const ProjectsBox = styled.div`
       font-family: PasCanter;
     }
 
-    div {
-      width: 100%;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
     img {
       transition: 1s;
       width: 100%;
-      height: 25vw;
+      height: 23.5vw;
+      object-fit: contain;
 
       &:hover {
-        scale: 1.1;
+        scale: 1.05;
       }
     }
 
     a {
       width: 100%;
+    }
+
+    @media (max-width: 1100px) {
+      width: 90%;
+      img {
+        height: auto;
+        object-fit: cover;
+      }
+
+      margin: 15vw 0;
     }
   }
 `;

@@ -55,7 +55,7 @@ const Contact = () => {
   }, []);
 
   const handleEmailButtonClick = () => {
-    const email = "gosselin.gab51@gmail.com";
+    const email = "gosselin.gabriel@outlook.com";
     const subject = "Portfolio Contact";
     const body = "";
 
@@ -127,7 +127,7 @@ const Contact = () => {
       </Top>
       <Footer>
         <p>Gabriel Gosselin</p>
-        <p>gosselin.gab51@gmail.com || +1 (450) 712 7842</p>
+        <p>gosselin.gabriel@outlook.com || +1 (450) 712 7842</p>
       </Footer>
     </Container>
   );
